@@ -1,0 +1,7 @@
+Outline
+Create a homepage with tabs for each letter of the alphabet
+Allow submissions of new words through the use of a button on each letters page
+
+Steps 
+Outline the UI layout
+Design database models
