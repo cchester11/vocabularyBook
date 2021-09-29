@@ -5,3 +5,5 @@ Allow submissions of new words through the use of a button on each letters page
 Steps 
 Outline the UI layout
 Design database models
+Create th buttons used to send us to the create a new word form 
+Once the create a new word form is submitted, the information will be processed through post request and we will be redirected to the vocab page
