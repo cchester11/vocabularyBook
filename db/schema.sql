@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS vocabBook_db;
+
+CREATE DATABASE vocabBook_db;
