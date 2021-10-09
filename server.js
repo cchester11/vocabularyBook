@@ -5,7 +5,7 @@ const expressHandleBars = require('express-handlebars')
 const app = express()
 const PORT = process.env.PORT || 8001
 
-const sequelize = require('./connection/config')
+const sequelize = require('./config/connection')
 
 app.set('views', path.join(__dirname, 'views'))
 app.engine('handlebars', expressHandleBars({
@@ -21,7 +21,10 @@ app.use(require('./routes'))
 app.use(express.static(path.join(__dirname, 
   'public')))
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ 
+  force: false 
+})
+.then(() => {
   app.listen(PORT, () => {
     console.log(`Server running on PORT ${PORT}`)
   })
