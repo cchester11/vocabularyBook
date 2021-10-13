@@ -15,6 +15,10 @@ Words.init(
     word: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    definition: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   },
   {
