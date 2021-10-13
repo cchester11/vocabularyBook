@@ -1,7 +1,7 @@
 const router = require('express').Router()
 
-const publicRoutes = require('./clientSideRoutes/home')
+const clientRoutes = require('./clientRoutes')
 
-router.use('/', publicRoutes)
+router.use('/', clientRoutes)
 
 module.exports = router

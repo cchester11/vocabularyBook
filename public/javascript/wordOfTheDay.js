@@ -1,0 +1,2 @@
+const wordOfTheDay = getElementById('figure')
+
