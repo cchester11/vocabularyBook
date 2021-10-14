@@ -26,7 +26,7 @@ h1 {
   height: 100%;
 }
 
-#figure {
+.figure {
   font-weight: lighter;
   font-size: 5em;
   color: tomato;
@@ -46,6 +46,10 @@ h1 {
   background-color:rgba(108, 41, 215, 0.4);
   width: 100%;
   height: 100%;
+}
+
+#dictionaryTitle {
+  font-size: 3.5em;
 }
 
 #alphabetBtn {
