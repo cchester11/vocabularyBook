@@ -16,6 +16,10 @@ body {
   background-origin: border-box;
 }
 
+h1 {
+  font-weight: lighter;
+}
+
 #home {
   background-color: rgba(89, 185, 84, 0.3);
   width: 100%;
