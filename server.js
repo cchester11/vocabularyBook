@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const expressHandleBars = require('express-handlebars')
+const exphbs = require('express-handlebars')
 
 const app = express()
 const PORT = process.env.PORT || 8001
@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8001
 const sequelize = require('./config/connection')
 
 app.set('views', path.join(__dirname, 'views'))
-app.engine('handlebars', expressHandleBars({
+app.engine('handlebars', exphbs({
   defaultLayout: 'main'
 }))
 app.set('view engine', 'handlebars')

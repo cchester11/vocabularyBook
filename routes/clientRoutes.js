@@ -7,10 +7,5 @@ router.get('/', (req, res) => {
 router.get('/createWord', (req, res) => {
   res.render('createWord')
 })
-.catch(err => {
-  if(err) {
-    throw new Error(err)
-  }
-})
 
 module.exports = router;
