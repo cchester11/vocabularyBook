@@ -8,4 +8,8 @@ router.get('/createWord', (req, res) => {
   res.render('createWord')
 })
 
+router.get('/dictionary', (req, res) => {
+  res.render('dictionary')
+})
+
 module.exports = router;

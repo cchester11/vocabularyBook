@@ -3,7 +3,7 @@ let i = 0;
 function changeWordOfTheDayColor () {
   const wordOfTheDay = document.querySelector('#figure')
 
-  let color = ["tomato", "purple", "green", "salmon"]
+  let color = ["tomato", "purple", "green", "yellow"]
 
   wordOfTheDay.setAttribute('style', `color: ${color[i]}`)
 
@@ -14,4 +14,4 @@ function changeWordOfTheDayColor () {
   }
 }
 
-setInterval(changeWordOfTheDayColor, 3000)
+setInterval(changeWordOfTheDayColor, 5000)
