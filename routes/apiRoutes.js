@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Words } = require('../models/index')
+const { Words } = require('../models')
 
 router.get('/words', (req, res) => {
   Words.findAll({})
