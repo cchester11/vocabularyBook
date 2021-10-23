@@ -1,0 +1,4 @@
+create a page that will continuously loop through words
+create an algorithm that will check each beginning letter of a word to match the button clicked on the dictionary page
+algorithm should be placed in the fetch request
+populate the page with words that match the letter value of that button
