@@ -11,7 +11,7 @@ router.get('/words', (req, res) => {
 router.post('/words', (req, res) => {
   Words.create({
     word: req.body.word,
-    defintion: req.body.defintion
+    definition: req.body.definition
   })
   .then(results => {
     res.json(results)
