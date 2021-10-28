@@ -11,7 +11,7 @@ function createDictionaryTable () {
 
     const button = document.createElement('button')
 
-    button.id = 'alphabetBtn'
+    button.class = 'alphabetBtn'
 
     button.type = "submit"
 
