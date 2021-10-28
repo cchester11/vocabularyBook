@@ -1,21 +1,15 @@
 const toPages = (event) => {
   console.log(event.currentTarget.textContent)
 
-  // take the letter thats clicked on 
-  // pass into the fetch request so sequel query can use that letter to query the database
-  // output should be array of words with letter clicked on
-
   fetch(`/api/words${event.currentTarget.textContent}`)
     .then(response => response.json())
     .then(data => {
       console.log(data)
-      
+      // take array of words and pass into pages route 
+      // in pages.handlebars loop through array and display all the words
+      // if fetch doesnt work i may need to use axios
+      document.location.replace('pages')
     })
-
-  // take array of words and pass into pages route 
-  // in pages.handlebars loop through array and display all the words
-
-  //document.location.replace('pages')
 }
 
 function createDictionaryTable() {
