@@ -1,7 +1,4 @@
-create a page that will continuously loop through words
-create an algorithm that will check each beginning letter of a word to match the button clicked on the dictionary page
-algorithm should be placed in the fetch request
-populate the page with words that match the letter value of that button
-
-create a words page
-make client route to words page
+create a template in a variable
+create a variable to compile the template
+create a data variable and pass the data from the fetch into it
+us fs to write to the pages.handlebars file the information needed
