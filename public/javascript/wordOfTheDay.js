@@ -29,5 +29,5 @@ function changeDefinitionOfTheDayColor () {
   }
 }
 
-setInterval(changeWordOfTheDayColor, 5000)
-setInterval(changeDefinitionOfTheDayColor, 5000)
+setInterval(changeWordOfTheDayColor, 3000)
+setInterval(changeDefinitionOfTheDayColor, 3000)
