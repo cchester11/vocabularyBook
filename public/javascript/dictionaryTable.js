@@ -7,7 +7,6 @@ const toPages = (event) => {
       console.log(data)
       // take array of words and pass into pages route 
       // in pages.handlebars loop through array and display all the words
-      // if fetch doesnt work i may need to use axios
       document.location.replace('pages')
     })
 }
