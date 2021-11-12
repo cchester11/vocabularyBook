@@ -5,8 +5,7 @@ const toPages = (event) => {
     .then(response => response.json())
     .then(data => {
       console.log(data)
-      // take array of words and pass into pages route 
-      // in pages.handlebars loop through array and display all the words
+
       document.location.replace('pages')
     })
 }
