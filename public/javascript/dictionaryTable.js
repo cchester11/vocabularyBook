@@ -5,8 +5,17 @@ const toPages = (event) => {
     .then(response => response.json())
     .then(data => {
       console.log(data)
+      for(let i = 0; i < data.length; i ++) {
+        const wordDiv = $('<div>')
+        const word = $('<p>')
+        const def = $('<p>')
 
-      document.location.replace('pages')
+        word.text(data[i].word)
+        def.text(data[i].definition)
+        wordDiv.append(word)
+        wordDiv.append(def)
+      }
+      document.location.reload()
     })
 }
 

@@ -14,7 +14,9 @@ router.get('/dictionary', (req, res) => {
 })
 
 router.get('/pages', (req, res) => {
-  res.render('pages')
+  res.render('pages', {
+    data
+  })
 })
 
 module.exports = router;
