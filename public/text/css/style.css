@@ -36,7 +36,7 @@ h1 {
   color: cornsilk;
 }
 
-#createWordForm {
+#createWordForm, #createPrefixForm, #createSuffixForm {
   background-color: rgb(255, 99, 71);
   width: 100%;
   height: 100%;
