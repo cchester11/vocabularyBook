@@ -1,8 +1,8 @@
-const sequelize = require('../config/connection')
+// access the words table
 const { Words } = require('../models')
 
 const words = [
-  {
+  { 
     word: 'Pariah', 
     definition: 'A social out cast'
   },
