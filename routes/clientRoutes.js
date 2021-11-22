@@ -30,9 +30,7 @@ router.get('/dictionary', (req, res) => {
 
 // pages page that should somehow render all the data we got from the button mentioned above
 router.get('/pages', (req, res) => {
-  res.render('pages', {
-    data
-  })
+  res.render('pages')
 })
 
 module.exports = router;

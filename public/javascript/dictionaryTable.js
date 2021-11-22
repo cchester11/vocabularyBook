@@ -4,18 +4,26 @@ const toPages = (event) => {
   fetch(`/api/words${event.currentTarget.textContent}`)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
-      for(let i = 0; i < data.length; i ++) {
-        const wordDiv = $('<div>')
-        const word = $('<p>')
-        const def = $('<p>')
-
-        word.text(data[i].word)
-        def.text(data[i].definition)
-        wordDiv.append(word)
-        wordDiv.append(def)
+      let wordsArr = []
+      let defsArr = []
+    
+      for (let i = 0; i < data.length; i++) {
+        wordsArr.push(data[i].word)
+        defsArr.push(data[i].definition)
       }
-      document.location.reload()
+    
+      console.log(wordsArr, defsArr)
+
+      // document.location.replace('pages')
+
+      // const pagesDiv = document.querySelector('#pages')
+
+      // for(let i = 0; i < wordsArr.length; i ++) {
+      //   const p = document.createElement('p')
+      //   p.textContent = wordsArr[i]
+
+      //   pagesDiv.appendChild(p)
+      // }
     })
 }
 
