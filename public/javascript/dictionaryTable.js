@@ -14,7 +14,7 @@ const toPages = (event) => {
     
       console.log(wordsArr, defsArr)
 
-      // document.location.replace('pages')
+      document.location.replace('pages')
 
       // const pagesDiv = document.querySelector('#pages')
 
