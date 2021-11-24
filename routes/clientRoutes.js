@@ -1,6 +1,3 @@
-// import the ability to access the tables if need be
-const { Words, Suffix, Prefix } = require('../models')
-
 const router = require('express').Router()
 
 // home route
