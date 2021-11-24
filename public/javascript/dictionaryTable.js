@@ -1,30 +1,11 @@
 const toPages = (event) => {
-  console.log(event.currentTarget.textContent)
-
-  fetch(`/api/words${event.currentTarget.textContent}`)
-    .then(response => response.json())
-    .then(data => {
-      let wordsArr = []
-      let defsArr = []
-    
-      for (let i = 0; i < data.length; i++) {
-        wordsArr.push(data[i].word)
-        defsArr.push(data[i].definition)
-      }
-    
-      console.log(wordsArr, defsArr)
-
-      document.location.replace('pages')
-
-      // const pagesDiv = document.querySelector('#pages')
-
-      // for(let i = 0; i < wordsArr.length; i ++) {
-      //   const p = document.createElement('p')
-      //   p.textContent = wordsArr[i]
-
-      //   pagesDiv.appendChild(p)
-      // }
-    })
+  const replace = document.location.replace(`pages/${event.currentTarget.textContent}`)
+  if(!replace) {
+    console.log('unsuccessful send')
+  }
+  if(replace) {
+    console.log('successful send to the pages route')
+  }
 }
 
 function createDictionaryTable() {

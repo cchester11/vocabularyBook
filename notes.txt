@@ -1,4 +1,2 @@
-create a template in a variable
-create a variable to compile the template
-create a data variable and pass the data from the fetch into it
-us fs to write to the pages.handlebars file the information needed
+send the letter clicked in the alphabet series as a parameter to the pages route. 
+write functionality into the pages route that maps through each word starting with the letter using the parameter. 

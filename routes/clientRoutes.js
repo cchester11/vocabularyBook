@@ -29,8 +29,31 @@ router.get('/dictionary', (req, res) => {
 })
 
 // pages page that should somehow render all the data we got from the button mentioned above
-router.get('/pages', (req, res) => {
-  res.render('pages')
+router.get('/pages:id', (req, res) => {
+  fetch(`/api/words${req.params.id}`)
+  .then(response => {
+    res.json(response)
+  })
+  .then(data => {
+    let wordsArr = []
+    let defsArr = []
+
+      for (let i = 0; i < data.length; i++) {
+        wordsArr.push(data[i].word)
+        defsArr.push(data[i].definition)
+      }
+    
+    const words = wordsArr.map(word => {
+      word.get({'plain': true})
+    })
+    const defs = defsArr.map(def => {
+      def.get({plain: true})
+    })
+    res.render('pages', {
+      words,
+      defs
+    })
+  })
 })
 
 module.exports = router;

@@ -1,8 +1,12 @@
 <div class="container-fluid d-flex justify-content-center" id="pages">
+  {{#each words || word}}
   <div>
-    <figure>Hello</figure>
-    <figure>Bye</figure>
+    <figure>{{word}}</figure>
   </div>
+  {{/each}}
+  {{#each defs || def}}
+  <div>
+    <figure>{{def}}</figure>
+  </div>
+  {{/each}}
 </div>
-
-{{!-- <script src="/javascript/dictionaryTable.js"></script> --}}
