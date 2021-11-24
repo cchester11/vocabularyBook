@@ -3,7 +3,7 @@ const sequelize = require('sequelize')
 const Op = sequelize.Op
 const { Words, Prefix, Suffix } = require('../models')
 
-router.get('/words:param', (req, res) => {
+router.get('/words/:param', (req, res) => {
   Words.findAll({
     where: {
       word:{
