@@ -1,5 +1,7 @@
 const router = require('express').Router()
-const wordsParam = require('../apiRoutes/wordsParam')
+const sequelize = require('sequelize')
+const Op = sequelize.Op
+const { Words } = require('../../models')
 
 // home route
 router.get('/', (req, res) => {
@@ -28,10 +30,13 @@ router.get('/dictionary', (req, res) => {
 
 // pages page that should somehow render all the data we got from the button mentioned above
 router.get('/pages/:id', (req, res) => {
-  fetch(wordsParam)
-    .then(response => {
-      res.json(response)
-    })
+  Words.findAll({
+    where: {
+      word:{
+        [Op.like]: `${req.params.param}%`
+      }
+    }
+  })
     .then(data => {
       let wordsArr = []
       let defsArr = []

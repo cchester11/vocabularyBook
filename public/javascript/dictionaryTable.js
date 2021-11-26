@@ -1,5 +1,4 @@
 const toPages = (event) => {
-  // to be reinserted in the replace method /${event.currentTarget.textContent}
   const replace = document.location.replace(`pages/${event.currentTarget.textContent}`)
   if(!replace) {
     console.log('unsuccessful send')

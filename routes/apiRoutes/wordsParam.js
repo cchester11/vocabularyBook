@@ -1,4 +1,6 @@
 const router = require('express').Router()
+const sequelize = require('sequelize')
+const Op = sequelize.Op
 const { Words } = require('../../models')
 
 router.get('/words/:param', (req, res) => {
