@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const wordsParam = require('../apiRoutes/wordsParam')
 
 // home route
 router.get('/', (req, res) => {
@@ -27,31 +28,33 @@ router.get('/dictionary', (req, res) => {
 
 // pages page that should somehow render all the data we got from the button mentioned above
 router.get('/pages/:id', (req, res) => {
-  fetch(`/api/words/${req.params.id}`)
-  .then(response => {
-    res.json(response)
-  })
-  .then(data => {
-    let wordsArr = []
-    let defsArr = []
+  fetch(wordsParam)
+    .then(response => {
+      res.json(response)
+    })
+    .then(data => {
+      let wordsArr = []
+      let defsArr = []
 
       for (let i = 0; i < data.length; i++) {
         wordsArr.push(data[i].word)
         defsArr.push(data[i].definition)
       }
-    
+
       const words = wordsArr.map(word => {
-        word.get({'plain': true})
+        word.get({ 'plain': true })
       })
       const defs = defsArr.map(def => {
-        def.get({plain: true})
+        def.get({ plain: true })
       })
 
-    res.render('pages', {
-      words,
-      defs
+      res.render('pages', {
+        words,
+        defs
+      })
     })
-  })
+
+  res.render('pages')
 })
 
 module.exports = router;
