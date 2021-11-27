@@ -39,19 +39,10 @@ router.get('/pages/:id', (req, res) => {
     }
   })
     .then(data => {
-      let wordsArr = []
-      let defsArr = []
-
-      for (let i = 0; i < data.length; i++) {
-        wordsArr.push(data[i].word)
-        defsArr.push(data[i].definition)
-      }
-
-      console.log(wordsArr, defsArr)
+      const words = data.map(word => word.get({ plain: true }))
 
       res.render('pages', {
-        wordsArr,
-        defsArr
+        words
       })
     })
     .catch(err => {
