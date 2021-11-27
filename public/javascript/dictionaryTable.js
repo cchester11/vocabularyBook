@@ -1,8 +1,5 @@
 const toPages = (event) => {
   const replace = document.location.replace(`pages/${event.currentTarget.textContent}`)
-  if(!replace) {
-    console.log('unsuccessful send')
-  }
   if(replace) {
     console.log('successful send to the pages route')
   }
