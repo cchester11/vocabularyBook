@@ -1,12 +1,14 @@
 <div class="container-fluid d-flex justify-content-center" id="pages">
-  {{#each wordsArr as |word|}}
-  <div>
-    <figure>{{word}}</figure>
+  <div class="row">
+    {{#each wordsArr as |word|}}
+    <div class="pagesDiv">
+      <figure class="pagesWord">{{word}}</figure>
+    </div>
+    {{/each}}
+    {{#each defsArr as |def|}}
+    <div class="pagesDiv">
+      <figure>{{def}}</figure>
+    </div>
+    {{/each}}
   </div>
-  {{/each}}
-  {{#each defsArr as |def|}}
-  <div>
-    <figure>{{def}}</figure>
-  </div>
-  {{/each}} 
 </div>

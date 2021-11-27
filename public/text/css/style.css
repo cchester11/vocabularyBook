@@ -43,9 +43,13 @@ h1 {
 }
 
 #pages {
-  background-color: rgb(125, 87, 99);
+  background-color: rgb(102, 255, 178);
   width: 100%;
   height: 100%;
+}
+
+.pagesDiv {
+  width: 100%
 }
 
 #dictionary {
