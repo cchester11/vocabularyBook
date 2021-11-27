@@ -33,7 +33,7 @@ router.get('/pages/:id', (req, res) => {
   Words.findAll({
     where: {
       word:{
-        [Op.like]: `${req.params.param}%`
+        [Op.like]: `${req.params.id}%`
       }
     }
   })
