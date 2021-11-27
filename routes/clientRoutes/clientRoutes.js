@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const { defaultFormat } = require('moment-timezone')
 const sequelize = require('sequelize')
 const Op = sequelize.Op
 const { Words } = require('../../models')
@@ -46,20 +47,18 @@ router.get('/pages/:id', (req, res) => {
         defsArr.push(data[i].definition)
       }
 
-      const words = wordsArr.map(word => {
-        word.get({ 'plain': true })
-      })
-      const defs = defsArr.map(def => {
-        def.get({ plain: true })
-      })
+      console.log(wordsArr, defsArr)
 
       res.render('pages', {
-        words,
-        defs
+        wordsArr,
+        defsArr
       })
     })
-
-  res.render('pages')
+    .catch(err => {
+      if(err) {
+        throw new Error(err)
+      }
+    })
 })
 
 module.exports = router;
