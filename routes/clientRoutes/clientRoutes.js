@@ -1,5 +1,4 @@
 const router = require('express').Router()
-const { defaultFormat } = require('moment-timezone')
 const sequelize = require('sequelize')
 const Op = sequelize.Op
 const { Words } = require('../../models')
@@ -8,7 +7,6 @@ const { Words } = require('../../models')
 router.get('/', (req, res) => {
   res.render('home')
 })
-
 
 // creation pages used for sending data to the database
 router.get('/createWord', (req, res) => {
