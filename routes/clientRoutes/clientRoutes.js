@@ -5,7 +5,32 @@ const { Words } = require('../../models')
 
 // home route
 router.get('/', (req, res) => {
-  res.render('home')
+  Words.findAll({})
+  .then(results => {
+    const words = results.map(word => word.get({ plain: true }))
+    const wordsArray = []
+
+    for(let i = 0; i < words.length; i ++) {
+      let current = words[i]
+      wordsArray.push(current.word)
+    }
+
+    // Handlebars.registerHelper('switch', function(array) {
+    //   setInterval(() => {
+    //     Math.floor(Math.random() * array)
+
+    //   })
+    // })
+
+    res.render('home', {
+      wordsArray
+    })
+  })
+  .catch(err => {
+    if(err) {
+      throw new Error(err)
+    }
+  })
 })
 
 // creation pages used for sending data to the database
