@@ -15,13 +15,6 @@ router.get('/', (req, res) => {
       wordsArray.push(current.word)
     }
 
-    // Handlebars.registerHelper('switch', function(array) {
-    //   setInterval(() => {
-    //     Math.floor(Math.random() * array)
-
-    //   })
-    // })
-
     res.render('home', {
       wordsArray
     })
