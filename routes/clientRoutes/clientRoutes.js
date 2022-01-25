@@ -9,14 +9,21 @@ router.get('/', (req, res) => {
   .then(results => {
     const words = results.map(word => word.get({ plain: true }))
     const wordsArray = []
+    const defsArray = []
+    let wordOne = words[1].word
+    let defOne = words[1].definition
 
     for(let i = 0; i < words.length; i ++) {
       let current = words[i]
       wordsArray.push(current.word)
+      defsArray.push(current.definition)
     }
 
+    console.log(words[1].word)
+
     res.render('home', {
-      wordsArray
+      wordOne,
+      defOne
     })
   })
   .catch(err => {
