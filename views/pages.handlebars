@@ -2,7 +2,7 @@
   <div class="row w-75">
     {{#each words as |word|}}
     <div class="card-body col-12 border border-warning rounded bg-success h-25 m-auto">
-      <h5 class="card-title font-weight-light" id="wordVal">{{word.word}}</figure>
+      <h5 class="card-title font-weight-light" id="wordVal">{{word.word}}</h5>
         <p class="card-text" id="definitionVal">{{word.definition}}</p>
         <button class="button btn-warning btn-sm" id="editBtn" data-count="{{word.id}}">Edit</button>
         <button class="button btn-danger btn-sm" id="deleteBtn" data-count="{{word.id}}">Delete</button>
