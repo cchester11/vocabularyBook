@@ -1,2 +1,3 @@
-send the letter clicked in the alphabet series as a parameter to the pages route. 
-write functionality into the pages route that maps through each word starting with the letter using the parameter. 
+use the onclicks in the DOM to render the deleteWord method
+get rid of id's 
+think about incorporating local storage to manage {{word.id}} for the route
