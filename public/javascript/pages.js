@@ -26,7 +26,7 @@ function editWord(event) {
   }
 }
 
-
+// deletes word but when page reloads word still appears on the list of words on the page
 function deleteWord(event) {
   event.preventDefault()
   console.log('button was clicked')

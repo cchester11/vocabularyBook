@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const { Words } = require('../../models')
 
+// get all words; works fine
 router.get('/words', (req, res) => {
   console.log('finding all words')
   Words.findAll({})
@@ -12,6 +13,7 @@ router.get('/words', (req, res) => {
   })
 })
 
+// post route; works fine
 router.post('/words', (req, res) => {
   Words.create({
     word: req.body.word,
@@ -27,17 +29,21 @@ router.post('/words', (req, res) => {
     })
 })
 
-router.put('/update/:param', (req, res) => {
+// update route; not sure what issues encompass this route. does not provide an error when the route is requested
+router.put('/update/:id', (req, res) => {
+  console.log(req.body)
+  console.log(req.params.id)
   Words.update({
     word: req.body.word,
     defintion: req.body.definition
   },
   {
       where: {
-        id: req.params.param
+        id: req.params.id
       }
   })
   .then(results => {
+    console.log('results returned here')
     res.json(results)
   })
   .catch(err => {
@@ -45,6 +51,7 @@ router.put('/update/:param', (req, res) => {
   })
 })
 
+// delete route; works correctly
 router.delete('/delete/:id', (req, res) => {
   Words.destroy({
     where: {
