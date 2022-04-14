@@ -32,7 +32,7 @@ function deleteWord(event) {
   console.log('button was clicked')
   let current = event.currentTarget.dataset.count;
   console.log('current ' + current)
-  const response = fetch(`/api/words/delete/:${current}`, {
+  const response = fetch(`/api/delete/${current}`, {
     METHOD: "DELETE",
     headers: {'Content-Type': 'application/json'}
   })

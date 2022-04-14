@@ -45,7 +45,7 @@ router.put('/words/update/:param', (req, res) => {
   })
 })
 
-router.delete('/words/delete/:id', (req, res) => {
+router.delete('/delete/:id', (req, res) => {
   Words.destroy({
     where: {
       id: req.params.id
