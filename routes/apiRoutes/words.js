@@ -27,7 +27,7 @@ router.post('/words', (req, res) => {
     })
 })
 
-router.put('/words/update/:param', (req, res) => {
+router.put('/update/:param', (req, res) => {
   Words.update({
     word: req.body.word,
     defintion: req.body.definition
