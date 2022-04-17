@@ -27,13 +27,13 @@ function editWord(event) {
 }
 
 // deletes word but when page reloads word still appears on the list of words on the page
-function deleteWord(event) {
+async function deleteWord(event) {
   event.preventDefault()
   console.log('button was clicked')
   let current = event.currentTarget.dataset.count;
   console.log('current ' + current)
-  const response = fetch(`/api/delete/${current}`, {
-    method: "DELETE",
+  const response = await fetch(`/api/delete/${current}`, {
+    method: "delete",
     headers: {'Content-Type': 'application/json'}
   })
   
