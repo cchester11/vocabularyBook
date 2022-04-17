@@ -53,14 +53,15 @@ router.put('/update/:id', (req, res) => {
 
 // delete route; works correctly
 router.delete('/delete/:id', (req, res) => {
+  console.log('made it to delete route')
   Words.destroy({
     where: {
       id: req.params.id
     }
   })
-  .then(() => {
+  .then((results) => {
     console.log('word successfully deleted')
-    res.status(200).end()
+    res.json(results)
   })
   .catch(err => {
     throw new Error(err)

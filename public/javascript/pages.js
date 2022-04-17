@@ -37,6 +37,7 @@ function deleteWord(event) {
     headers: {'Content-Type': 'application/json'}
   })
   
+  // response not ok but delete route successfully deletes the word and properly handles results. strange
   if(response.ok) {
     console.log('deleted successfully', response)
     document.location.reload();
