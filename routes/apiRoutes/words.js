@@ -31,8 +31,6 @@ router.post('/words', (req, res) => {
 
 // update route; not sure what issues encompass this route. does not provide an error when the route is requested
 router.put('/update/:id', (req, res) => {
-  console.log(req.body)
-  console.log(req.params.id)
   Words.update({
     word: req.body.word,
     defintion: req.body.definition
@@ -44,6 +42,8 @@ router.put('/update/:id', (req, res) => {
   })
   .then(results => {
     console.log('results returned here')
+    console.log(req.body)
+    console.log(req.params.id)
     res.json(results)
   })
   .catch(err => {

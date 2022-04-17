@@ -1,7 +1,7 @@
 let editBtn = document.querySelector('#editBtn')
 let deleteBtn = document.querySelector('#deleteBtn')
 
-function editWord(event) {
+async function editWord(event) {
   event.preventDefault();
   console.log('button was clicked')
   let current = event.currentTarget.dataset.count;
@@ -9,7 +9,7 @@ function editWord(event) {
   // delete below code. create a textbox for each, save the values of the text boxs and send to the update route
   let word = document.querySelector('#wordVal')
   let definition = document.querySelector('#definitionVal')
-  const response = fetch(`/api/update/${current}`, {
+  const response = await fetch(`/api/update/${current}`, {
     method: "PUT",
     body: JSON.stringify({
       word,
