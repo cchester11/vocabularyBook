@@ -13,6 +13,20 @@ router.get('/words', (req, res) => {
   })
 })
 
+router.get('/words/:id', (req, res) => {
+  Words.findAll({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(results => {
+    res.json(results)
+  })
+  .catch(err => {
+    throw new Error(err)
+  })
+})
+
 // post route; works fine
 router.post('/words', (req, res) => {
   Words.create({
@@ -29,23 +43,18 @@ router.post('/words', (req, res) => {
     })
 })
 
-// update route; not sure what issues encompass this route. does not provide an error when the route is requested
+// update route; not sure what issues encompass this route
 router.put('/update/:id', (req, res) => {
   Words.update({
     word: req.body.word,
-    defintion: req.body.definition
+    definition: req.body.definition
   },
   {
       where: {
         id: req.params.id
       }
   })
-  .then(results => {
-    console.log('results returned here')
-    console.log(req.body)
-    console.log(req.params.id)
-    res.json(results)
-  })
+  .then(results => res.json(results))
   .catch(err => {
     throw new Error(err)
   })

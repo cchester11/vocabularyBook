@@ -1,14 +1,20 @@
 let editBtn = document.querySelector('#editBtn')
 let deleteBtn = document.querySelector('#deleteBtn')
 
+// cant use the ids of the words and definitions yet. ids are not specific to words and defs
 async function editWord(event) {
   event.preventDefault();
-  console.log('button was clicked')
+
   let current = event.currentTarget.dataset.count;
-  console.log(current)
-  // delete below code. create a textbox for each, save the values of the text boxs and send to the update route
-  let word = document.querySelector('#wordVal')
-  let definition = document.querySelector('#definitionVal')
+  // access updated word and def here
+
+  console.log('button was clicked')
+  console.log('id of word clicked ' + current)
+
+  // work on word and def ids.
+  const word = document.querySelector('#wordVal')
+  const definition = document.querySelector('#definitionVal')
+
   const response = await fetch(`/api/update/${current}`, {
     method: "PUT",
     body: JSON.stringify({
@@ -19,8 +25,8 @@ async function editWord(event) {
   })
 
   if (response.ok) {
-      console.log('success')
-      document.location.replace('/dictionary')
+      console.log('successful edit')
+      document.location.reload()
   } else {
     alert(response.statusText)
   }
@@ -29,9 +35,12 @@ async function editWord(event) {
 // deletes word but when page reloads word still appears on the list of words on the page
 async function deleteWord(event) {
   event.preventDefault()
-  console.log('button was clicked')
+
   let current = event.currentTarget.dataset.count;
-  console.log('current ' + current)
+
+  console.log('button was clicked')
+  console.log('id of word clicked ' + current)
+
   const response = await fetch(`/api/delete/${current}`, {
     method: "delete",
     headers: {'Content-Type': 'application/json'}
