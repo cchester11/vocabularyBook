@@ -7,13 +7,13 @@ async function editWord(event) {
 
   let current = event.currentTarget.dataset.count;
   // access updated word and def here
+  const word = document.querySelector('#wordVal')
+  const definition = document.querySelector('#definitionVal')
 
   console.log('button was clicked')
   console.log('id of word clicked ' + current)
 
   // work on word and def ids.
-  const word = document.querySelector('#wordVal')
-  const definition = document.querySelector('#definitionVal')
 
   const response = await fetch(`/api/update/${current}`, {
     method: "PUT",
