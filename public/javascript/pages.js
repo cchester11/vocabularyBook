@@ -1,5 +1,4 @@
-let editBtn = document.querySelector('#editBtn')
-let deleteBtn = document.querySelector('#deleteBtn')
+const activeBtn = document.activeElement
 
 // cant use the ids of the words and definitions yet. ids are not specific to words and defs
 async function editWord(event) {
@@ -55,5 +54,12 @@ async function deleteWord(event) {
   }
 }
 
-editBtn.addEventListener('click', editWord)
-deleteBtn.addEventListener('click', deleteWord)
+activeBtn.addEventListener('focus', () => {
+  if(activeBtn.className = 'deleteBtn') {
+    deleteWord()
+  } else if(activeBtn.className = 'editBtn') {
+    editWord()
+  }
+}) 
+
+
