@@ -54,11 +54,11 @@ async function deleteWord(event) {
   }
 }
 
-activeBtn.addEventListener('focus', () => {
+activeBtn.addEventListener('click', () => {
   if(activeBtn.className = 'deleteBtn') {
-    deleteWord()
+    deleteWord(e)
   } else if(activeBtn.className = 'editBtn') {
-    editWord()
+    editWord(e)
   }
 }) 
 
