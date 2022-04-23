@@ -1,4 +1,4 @@
-const activeBtn = document.activeElement
+const activateDeleteBtn = document.getElementsByClassName('deleteBtn')
 
 // cant use the ids of the words and definitions yet. ids are not specific to words and defs
 async function editWord(event) {
@@ -45,7 +45,7 @@ async function deleteWord(event) {
     headers: {'Content-Type': 'application/json'}
   })
   
-  // response not ok but delete route successfully deletes the word and properly handles results. strange
+  // async functionality allows response to render before page reload. works correctly
   if(response.ok) {
     console.log('deleted successfully', response)
     document.location.reload();
@@ -54,12 +54,7 @@ async function deleteWord(event) {
   }
 }
 
-activeBtn.addEventListener('click', () => {
-  if(activeBtn.className = 'deleteBtn') {
-    deleteWord(e)
-  } else if(activeBtn.className = 'editBtn') {
-    editWord(e)
-  }
-}) 
+
+// activeBtn eventListener
 
 
