@@ -2,10 +2,10 @@
   <div class="row w-75">
     {{#each words as |word|}}
     <div class="card-body col-12 border border-warning rounded bg-success h-25 m-auto">
-      <h5 class="card-title font-weight-light" id="wordVal">{{word.word}}</h5>
-        <p class="card-text" id="definitionVal">{{word.definition}}</p>
-        <button class="button btn-warning btn-sm editBtn" data-count="{{word.id}}">Edit</button>
-        <button class="button btn-danger btn-sm deleteBtn" data-count="{{word.id}}">Delete</button>
+      <h5 class="card-title font-weight-light" id="{{word.id}}">{{word.word}}</h5>
+        <p class="card-text" id="{{word.definition}}">{{word.definition}}</p>
+        <button class="button btn-warning btn-sm editBtn" id="{{word.id}}" data-count="{{word.id}}">Edit</button>
+        <button class="button btn-danger btn-sm deleteBtn" id="{{word.id}}" data-count="{{word.id}}">Delete</button>
     </div>
     {{/each}}
   </div>

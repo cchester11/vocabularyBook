@@ -1,5 +1,3 @@
-const activateDeleteBtn = document.getElementsByClassName('deleteBtn')
-
 // cant use the ids of the words and definitions yet. ids are not specific to words and defs
 async function editWord(event) {
   event.preventDefault();
