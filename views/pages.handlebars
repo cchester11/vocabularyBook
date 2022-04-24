@@ -5,7 +5,7 @@
       <h5 class="card-title font-weight-light" id="{{word.id}}">{{word.word}}</h5>
         <p class="card-text" id="{{word.definition}}">{{word.definition}}</p>
         <button class="button btn-warning btn-sm editBtn" id="{{word.id}}" data-count="{{word.id}}">Edit</button>
-        <button class="button btn-danger btn-sm deleteBtn" id="{{word.id}}" data-count="{{word.id}}">Delete</button>
+        <button class="button btn-danger btn-sm deleteBtn" id="{{word.id}}" data-count="{{word.id}}" onclick="deleteWord(this.id)">Delete</button>
     </div>
     {{/each}}
   </div>

@@ -30,10 +30,9 @@ async function editWord(event) {
 }
 
 // deletes word but when page reloads word still appears on the list of words on the page
-async function deleteWord(event) {
-  event.preventDefault()
+async function deleteWord(clickedId) {
 
-  let current = event.currentTarget.dataset.count;
+  let current = clickedId;
 
   console.log('button was clicked')
   console.log('id of word clicked ' + current)
