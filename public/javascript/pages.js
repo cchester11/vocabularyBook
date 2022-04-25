@@ -1,11 +1,10 @@
 // cant use the ids of the words and definitions yet. ids are not specific to words and defs
-async function editWord(event) {
+// send back the id as a param to find the right word and the updated word and definition in the body for update
+// can use replaceChild on click on editBtn
+async function editWord(event, id, word, definition) {
   event.preventDefault();
 
   let current = event.currentTarget.dataset.count;
-  // access updated word and def here
-  const word = document.querySelector('#wordVal')
-  const definition = document.querySelector('#definitionVal')
 
   console.log('button was clicked')
   console.log('id of word clicked ' + current)
