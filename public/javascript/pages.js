@@ -1,6 +1,7 @@
 // cant use the ids of the words and definitions yet. ids are not specific to words and defs
 // send back the id as a param to find the right word and the updated word and definition in the body for update
 // can use replaceChild on click on editBtn
+// possible problem is that preventDefault only works with Jquery
 async function editWord(event, id, word, definition) {
   event.preventDefault();
 
