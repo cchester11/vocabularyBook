@@ -1,33 +1,47 @@
-// cant use the ids of the words and definitions yet. ids are not specific to words and defs
-// send back the id as a param to find the right word and the updated word and definition in the body for update
 // can use replaceChild on click on editBtn
+
 // possible problem is that preventDefault only works with Jquery
-async function editWord(event, id, word, definition) {
-  event.preventDefault();
+const pages = document.querySelector('#pages')
 
-  let current = event.currentTarget.dataset.count;
-
-  console.log('button was clicked')
-  console.log('id of word clicked ' + current)
-
-  // work on word and def ids.
-
-  const response = await fetch(`/api/update/${current}`, {
-    method: "PUT",
-    body: JSON.stringify({
-      word,
-      definition
-    }),
-    headers: { "Content-Type": "application/json" }
-  })
-
-  if (response.ok) {
-      console.log('successful edit')
-      document.location.reload()
-  } else {
-    alert(response.statusText)
-  }
+function editWord(event) {
+  event.target.style.visibility = 'hidden'
+  let target = event.target.id
+  let targetSib = event.target
+  console.log(target, targetSib)
+  // console.log('button ' + clickedBtn + ' was clicked')
+  
+  // console.log(this.window.document)
 }
+  // const response = await fetch(`/api/update/${id}`, {
+  //   method: "PUT",
+  //   body: JSON.stringify({
+  //     word,
+  //     definition
+  //   }),
+  //   headers: { "Content-Type": "application/json" }
+  // })
+
+  // if (response.ok) {
+  //     console.log('successful edit')
+  //     document.location.reload()
+  // } else {
+  //   alert(response.statusText)
+  // }
+
+
+  // can study this code for help
+  
+  //deleteButton.addEventListener('click', function(event) {
+    //   event.preventDefault() 
+    //   console.log(event)
+    
+    //   if(event.target.matches('button')) {
+    //     console.log('button was clicked')
+    //     let id = event.target.parentElement.id
+    //     console.log(id)
+    //     deleteCharacter(id)
+    //   }
+    // })
 
 // deletes word but when page reloads word still appears on the list of words on the page
 async function deleteWord(clickedId) {
@@ -51,7 +65,6 @@ async function deleteWord(clickedId) {
   }
 }
 
-
-// activeBtn eventListener
+pages.addEventListener('click', editWord)
 
 
