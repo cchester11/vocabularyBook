@@ -21,7 +21,7 @@ app.use(require('./routes'))
 app.use(express.static(path.join(__dirname, 'public')))
 
 sequelize.sync({ 
-  force: false 
+  force: true 
 })
 .then(() => {
   app.listen(PORT, () => {
