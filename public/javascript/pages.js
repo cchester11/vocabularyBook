@@ -1,5 +1,10 @@
 // deletes word but when page reloads word still appears on the list of words on the page
 // edit words
+
+// use onclick function here
+// pass the id of the edit button here in the onclick
+// convert p tag into input bar
+// save changes and send in put request using stashed id
 $('#wordListDiv').on('click', 'h-5', () => {
   let text = $(this).text().trim()
 
