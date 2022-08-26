@@ -1,4 +1,5 @@
-// deletes word but when page reloads word still appears on the list of words on the page
+
+
 async function deleteWord(clickedId) {
 
   let current = clickedId;
