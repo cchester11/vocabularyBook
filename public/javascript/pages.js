@@ -1,4 +1,6 @@
-
+$("button").on('click', () => {
+  alert('button was clicked')
+})
 
 async function deleteWord(clickedId) {
 
