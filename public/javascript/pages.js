@@ -1,25 +1,6 @@
-$(".card-body").on('click', '.editBtn', (event) => {
-  const clicked = event.target
-  const clickedId = event.target.id
-  const text = $(clicked).prevAll().text()
-  // const definition = text.slice(0, 16)
-  // const word = text.slice(16, text.length)
-  const word = $(clicked).siblings('h5').text()
-  const savedWord = new Array()
-  for (let i = 0; i < text.length; i++) {
-    let goal = word
-    if (text.includes(goal)) {
-      savedWord.push(goal)
-      const getWord = $(clicked).siblings('h5')
-      const getDefinition = $(clicked).siblings('p')
-      $(getWord).replaceWith(`<input placeholder="${goal}>`)
-      $(getDefinition).replaceWith('<input>')
-    }
-  }
-  // $(getWord).replaceWith(`<input placeholder="${getWord.text()}>`)
-  // $(getDefinition).replaceWith(`<input placeholder="${getDefinition.text()}`)
-  return
-})
+function saveId (data) {
+  localStorage.setItem('itemId', JSON.stringify(data))
+};
 
 async function editWord(clickedId, word, definition) {
   let current = clickedId
@@ -39,10 +20,30 @@ async function editWord(clickedId, word, definition) {
   } else {
     alert(response.statusText)
   }
-}
+};
+
+$(".card-body").on('click', '.editBtn', (event) => {
+  const targetEl = event.target;
+  const targetId = event.target.id;
+
+  saveId(targetId)
+
+  const saveWordEl = $(targetEl).siblings('h5');
+  const saveWord = $(targetEl).siblings('h5').text();
+  const saveDefEl = $(targetEl).siblings('p');
+  const saveDef = $(targetEl).siblings('p').text();
+  
+  $(saveWordEl).replaceWith(`<textarea>${saveWord}</textarea>`);
+  $(saveDefEl).replaceWith(`<textarea>${saveDef}</textarea>`);
+
+  // save new values after text area loses focus
+  // return el's back to h5 and p
+  // run the editWord function 
+  // good to go 
+  return
+});
 
 async function deleteWord(clickedId) {
-
   let current = clickedId;
 
   console.log('button was clicked')
@@ -60,6 +61,6 @@ async function deleteWord(clickedId) {
   } else {
     alert(response.statusText)
   }
-}
+};
 
 
