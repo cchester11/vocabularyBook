@@ -36,6 +36,8 @@ $(".card-body").on('click', '.editBtn', (event) => {
   $(saveWordEl).replaceWith(`<textarea>${saveWord}</textarea>`);
   $(saveDefEl).replaceWith(`<textarea>${saveDef}</textarea>`);
 
+  // try creating a save button here and adding an event listener to it
+
   // save new values after text area loses focus
   // return el's back to h5 and p
   // run the editWord function 
