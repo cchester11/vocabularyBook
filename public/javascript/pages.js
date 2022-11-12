@@ -55,12 +55,16 @@ $(".card-body").on('change', 'textarea', (event) => {
   const newDef = targetEl.value;
 
   saveNewDef(newDef)
+
+  $(targetEl).replaceWith(`<p>${newDef}</p>`)
 });
 $(".card-body").on('change', 'input', (event) => {
   const targetEl = event.target;
   const newWord = targetEl.value;
 
   saveNewWord(newWord)
+
+  $(targetEl).replaceWith(`<h5>${newWord}</h5>`)
 });
 
 
