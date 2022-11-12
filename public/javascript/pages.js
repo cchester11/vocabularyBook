@@ -1,6 +1,12 @@
 function saveId (data) {
   localStorage.setItem('itemId', JSON.stringify(data))
 };
+function saveNewWord (newWord) {
+  localStorage.setItem('newWord', JSON.stringify(newWord))
+};
+function saveNewDef (newDef) {
+  localStorage.setItem('newDef', JSON.stringify(newDef))
+}; 
 
 async function editWord(clickedId, word, definition) {
   let current = clickedId
@@ -22,6 +28,7 @@ async function editWord(clickedId, word, definition) {
   }
 };
 
+//begin edits of item values on click of edit button
 $(".card-body").on('click', '.editBtn', (event) => {
   const targetEl = event.target;
   const targetId = event.target.id;
@@ -33,17 +40,29 @@ $(".card-body").on('click', '.editBtn', (event) => {
   const saveDefEl = $(targetEl).siblings('p');
   const saveDef = $(targetEl).siblings('p').text();
   
-  $(saveWordEl).replaceWith(`<textarea>${saveWord}</textarea>`);
+  $(saveWordEl).replaceWith(`<input type="text" value=${saveWord}>`);
   $(saveDefEl).replaceWith(`<textarea>${saveDef}</textarea>`);
 
-  // try creating a save button here and adding an event listener to it
-
-  // save new values after text area loses focus
-  // return el's back to h5 and p
-  // run the editWord function 
-  // good to go 
-  return
+  $(saveWordEl).trigger('focus');
+  $(saveDefEl).trigger('focus');
 });
+
+//save new values on change of their replacement elements
+// return el's back to h5 and p
+// run the editWord function 
+$(".card-body").on('change', 'textarea', (event) => {
+  const targetEl = event.target;
+  const newDef = targetEl.value;
+
+  saveNewDef(newDef)
+});
+$(".card-body").on('change', 'input', (event) => {
+  const targetEl = event.target;
+  const newWord = targetEl.value;
+
+  saveNewWord(newWord)
+});
+
 
 async function deleteWord(clickedId) {
   let current = clickedId;
