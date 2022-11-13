@@ -47,7 +47,6 @@ $(".card-body").on('click', '.editBtn', (event) => {
   $(saveDefEl).trigger('focus');
 });
 
-//save new values on change of their replacement elements
 // return el's back to h5 and p
 // run the editWord function 
 $(".card-body").on('change', 'textarea', (event) => {
