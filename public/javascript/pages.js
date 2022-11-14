@@ -72,22 +72,7 @@ $(".card-body").on('click', '.saveBtn', async (event) => {
   const definition = JSON.parse(localStorage.getItem('newDef'))
   const clickedId = JSON.parse(localStorage.getItem('itemId'))
 
-  const response = await fetch(`/api/update/${clickedId}`, {
-    method: 'update',
-    body: {
-      id: clickedId,
-      word: word,
-      definition: definition
-    },
-    headers: {'Content-Type': 'application/json'}
-  }) 
-
-  if(response.ok) {
-    console.log('item updated')
-    return response.json()
-  } else {
-    alert(response.statusText)
-  }
+  editWord(clickedId, word, definition)
 });
 
 
