@@ -5,32 +5,7 @@ const { Words } = require('../../models')
 
 // home route
 router.get('/', (req, res) => {
-  Words.findAll({})
-  .then(results => {
-    const words = results.map(word => word.get({ plain: true }))
-    const wordsArray = []
-    const defsArray = []
-    let wordOne = words[1].word
-    let defOne = words[1].definition
-
-    for(let i = 0; i < words.length; i ++) {
-      let current = words[i]
-      wordsArray.push(current.word)
-      defsArray.push(current.definition)
-    }
-
-    console.log(words[1].word)
-
-    res.render('home', {
-      wordOne,
-      defOne
-    })
-  })
-  .catch(err => {
-    if(err) {
-      throw new Error(err)
-    }
-  })
+  res.render('home')
 })
 
 // creation pages used for sending data to the database
@@ -47,12 +22,12 @@ router.get('/createSuffix', (req, res) => {
 })
 
 
-// the dictionary page that houses all the letter buttons who talk to the backend and retrieve words according to the letter represented in the button
+// a page displaying an index of the letters of the alphabet. choose one to be routed to the route below
 router.get('/dictionary', (req, res) => {
   res.render('dictionary')
 })
 
-// pages page that should somehow render all the data we got from the button mentioned above
+// works correctly. takes you to a page that displays all words starting with selected letter
 router.get('/pages/:id', (req, res) => {
   Words.findAll({
     where: {

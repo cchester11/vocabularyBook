@@ -13,6 +13,30 @@ router.get('/words', (req, res) => {
   })
 })
 
+// route used for home page. sends an array of total words and defs to the js dom file of the homepage
+// not necessary at the moment. also doesnt seem to work
+// router.get('/homepage', (req, res) => {
+//   Words.findAll({})
+//   .then(results => {
+//     const words = results.map(word => word.get({ plain: true }))
+//     const wordsArray = []
+//     const defsArray = []
+
+//     for(let i = 0; i < words.length; i ++) {
+//       let current = words[i]
+//       wordsArray.push(current.word)
+//       defsArray.push(current.definition)
+//     }
+
+//     res = wordsArray, defsArray
+//   })
+//   .catch(err => {
+//     if(err) {
+//       throw new Error(err)
+//     }
+//   })
+// })
+
 // not used; (I think)
 router.get('/words/:id', (req, res) => {
   Words.findAll({
