@@ -22,6 +22,7 @@ async function editWord(clickedId, word, definition) {
   })
 
   if (response.ok) {
+    console.log('item updated')
     return response.json()
   } else {
     alert(response.statusText)
@@ -47,8 +48,6 @@ $(".card-body").on('click', '.editBtn', (event) => {
   $(saveDefEl).trigger('focus');
 });
 
-// return el's back to h5 and p
-// run the editWord function 
 $(".card-body").on('change', 'textarea', (event) => {
   const targetEl = event.target;
   const newDef = targetEl.value;
@@ -64,6 +63,31 @@ $(".card-body").on('change', 'input', (event) => {
   saveNewWord(newWord)
 
   $(targetEl).replaceWith(`<h5>${newWord}</h5>`)
+});
+
+$(".card-body").on('click', '.saveBtn', async (event) => {
+  event.preventDefault()
+
+  const word = JSON.parse(localStorage.getItem('newWord'))
+  const definition = JSON.parse(localStorage.getItem('newDef'))
+  const clickedId = JSON.parse(localStorage.getItem('itemId'))
+
+  const response = await fetch(`/api/update/${clickedId}`, {
+    method: 'update',
+    body: {
+      id: clickedId,
+      word: word,
+      definition: definition
+    },
+    headers: {'Content-Type': 'application/json'}
+  }) 
+
+  if(response.ok) {
+    console.log('item updated')
+    return response.json()
+  } else {
+    alert(response.statusText)
+  }
 });
 
 
