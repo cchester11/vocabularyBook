@@ -13,6 +13,7 @@ router.get('/words', (req, res) => {
   })
 })
 
+// not used; (I think)
 router.get('/words/:id', (req, res) => {
   Words.findAll({
     where: {

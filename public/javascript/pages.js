@@ -9,15 +9,12 @@ function saveNewDef (newDef) {
 }; 
 
 async function editWord(clickedId, word, definition) {
-  let current = clickedId
-
-  const response = await fetch(`api/update/${current}`, {
-    method: "update",
-    body: {
-      id: current,
+  const response = await fetch(`/api/update/${clickedId}`, {
+    method: "PUT",
+    body: JSON.stringify({
       word: word,
       definition: definition
-    },
+    }),
     headers: { 'Content-Type': 'application/json' }
   })
 
@@ -65,7 +62,7 @@ $(".card-body").on('change', 'input', (event) => {
   $(targetEl).replaceWith(`<h5>${newWord}</h5>`)
 });
 
-$(".card-body").on('click', '.saveBtn', async (event) => {
+$(".card-body").on('click', '.saveBtn', (event) => {
   event.preventDefault()
 
   const word = JSON.parse(localStorage.getItem('newWord'))
