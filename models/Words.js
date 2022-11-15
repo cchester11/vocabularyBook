@@ -21,12 +21,20 @@ Words.init(
     definition: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'users',
+        key: 'id'
+      }
     }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
+    modelName: 'words',
     underscored: true
   }
 )

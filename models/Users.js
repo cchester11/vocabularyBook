@@ -5,7 +5,8 @@ const sequelize = require('../config/connection');
 
 // construct the model for Users
 class Users extends Model {
-
+// some hooks can be written in here
+// see just_tech_news for example
 }
 
 Users.init(
@@ -31,6 +32,7 @@ Users.init(
             sequelize,
             timestamps: false,
             freezeTableName: true,
+            modelName: 'users',
             underscored: true
       }
 )
