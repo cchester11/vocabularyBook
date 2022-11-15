@@ -3,8 +3,13 @@ const sequelize = require('sequelize')
 const Op = sequelize.Op
 const { Words } = require('../../models')
 
-// home route
+// login route
 router.get('/', (req, res) => {
+  res.render('login')
+})
+
+// home route
+router.get('/home', (req, res) => {
   res.render('home')
 })
 
