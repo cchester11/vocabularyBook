@@ -33,7 +33,7 @@ async function login (event) {
 
       if(username && password) {
             const response = await fetch('/loginform', {
-                  method: "POST",
+                  method: "post",
                   body: JSON.stringify({
                         username,
                         password
