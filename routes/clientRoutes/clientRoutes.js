@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 })
 
 // take to homepage after successful sign up
-router.post('/signup', (req, res) => {
+router.post('/signupform', (req, res) => {
   // send body {username: 'username', password: 'password'} to sequelize to create new user
   Users.create({
     username: req.body.username,
@@ -27,6 +27,31 @@ router.post('/signup', (req, res) => {
     .catch(err => {
       window.alert(err)
       res.status(500).json(err)
+    })
+  })
+})
+
+router.post('/loginform', (req, res) => {
+  Users.findOne({
+    where: {
+      username: req.body.username,
+      password: req.body.password
+    }
+  })
+  .then(user => {
+    if(!user) {
+      res.status(400).json({ message: 'Wrong username or password.' })
+    }
+
+    req.session.save(() => {
+      req.session.user_id = user.id,
+      req.session.username = user.username,
+      req.session.loggedIn = true
+
+      res.json({ 
+        user: user, 
+        message: 'You are now logged in'
+      })
     })
   })
 })

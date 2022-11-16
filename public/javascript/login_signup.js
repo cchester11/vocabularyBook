@@ -5,7 +5,7 @@ async function signup(event) {
       const password = document.getElementById('password-signup').value.trim()
       console.log(username, password)
       if(username && password) {
-            const response = await fetch('/signup', {
+            const response = await fetch('/signupform', {
                   method: "POST",
                   body: JSON.stringify({
                         username,
@@ -32,7 +32,7 @@ async function login (event) {
       const password = document.getElementById('password-login').value.trim()
 
       if(username && password) {
-            const response = await fetch('/login', {
+            const response = await fetch('/loginform', {
                   method: "POST",
                   body: JSON.stringify({
                         username,
