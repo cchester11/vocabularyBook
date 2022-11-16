@@ -39,6 +39,8 @@ app.use(session(sess))
 app.use(require('./routes'))
 
 // fire up the server
+// if force: true the tables are erased and reset
+// if force: false all data will be preserved at each fire up
 sequelize.sync({ 
   force: false
 })

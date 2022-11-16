@@ -25,7 +25,7 @@ Words.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'users',
+        model: 'Users',
         key: 'id'
       }
     }
@@ -34,7 +34,7 @@ Words.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    modelName: 'words',
+    modelName: 'Words',
     underscored: true
   }
 )
