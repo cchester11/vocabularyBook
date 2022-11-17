@@ -3,6 +3,11 @@ const sequelize = require('sequelize')
 const Op = sequelize.Op
 const { Words } = require('../../models')
 
+// beginning page that throws the login page
+router.get('/', (req, res) => {
+  res.render('login')
+})
+
 // home route
 router.get('/home', (req, res) => {
   res.render('home')

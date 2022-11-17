@@ -24,6 +24,7 @@ router.post('/signupform', (req, res) => {
             })
 })
 
+// take to homepage after successful login
 router.post('/loginform', (req, res) => {
       Users.findOne({
             where: {
