@@ -28,7 +28,7 @@ router.get('/words/:id', (req, res) => {
   })
 })
 
-// post route; works fine
+// post route; creates a new word; works fine
 router.post('/words', (req, res) => {
   Words.create({
     word: req.body.word,
