@@ -10,17 +10,19 @@ router.post('/signupform', (req, res) => {
       })
             .then(results => {
                   req.session.save(() => {
-                        // save the below tokens to the users session while the user is logged in to allow the user access to all web apps pages
                         req.session.user_id = results.id,
-                              req.session.username = results.username,
-                              req.session.loggedIn = true
+                        req.session.username = results.username,
+                        req.session.loggedIn = true
 
-                        res.json(results)
-                  })
-                        .catch(err => {
-                              window.alert(err)
-                              res.status(500).json(err)
+                        res.json({
+                              user: results,
+                              message: 'You are now logged in'
                         })
+                  })
+            })
+            .catch(err => {
+                  window.alert(err)
+                  res.status(500).json(err)
             })
 })
 
@@ -39,14 +41,17 @@ router.post('/loginform', (req, res) => {
 
                   req.session.save(() => {
                         req.session.user_id = user.id,
-                              req.session.username = user.username,
-                              req.session.loggedIn = true
+                        req.session.username = user.username,
+                        req.session.loggedIn = true
 
                         res.json({
                               user: user,
                               message: 'You are now logged in'
                         })
                   })
+            })
+            .catch(err => {
+                  throw new Error(err)
             })
 })
 
