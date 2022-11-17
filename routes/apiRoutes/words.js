@@ -13,7 +13,7 @@ router.get('/words', (req, res) => {
   })
 })
 
-// not used; (I think)
+// not used; but can be used in the search issue later
 router.get('/words/:id', (req, res) => {
   Words.findAll({
     where: {
@@ -32,7 +32,8 @@ router.get('/words/:id', (req, res) => {
 router.post('/words', (req, res) => {
   Words.create({
     word: req.body.word,
-    definition: req.body.definition
+    definition: req.body.definition,
+    user_id: req.session.user_id
   })
     .then(results => {
       res.json(results)
