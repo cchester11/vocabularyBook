@@ -1,3 +1,4 @@
+// remember that any route sending a body of data to the server cannot be a get route. get routes do not send any information. they only recieve info
 async function signup(event) {
       event.preventDefault()
 
