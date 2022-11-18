@@ -36,6 +36,7 @@ router.get('/dictionary', (req, res) => {
 router.get('/pages/:id', (req, res) => {
   Words.findAll({
     where: {
+      user_id: req.session.user_id,
       word:{
         [Op.like]: `${req.params.id}%`
       }
