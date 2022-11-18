@@ -4,13 +4,19 @@ const { Words } = require('../../models')
 // get all words; works fine
 router.get('/words', (req, res) => {
   console.log('finding all words')
-  Words.findAll({})
-  .then(results => {
-    res.json(results)
-  })
-  .catch(err => {
-    throw new Error(err)
-  })
+  if(req.session) {
+    Words.findAll({
+      where: {
+        user_id: req.session.user_id
+      }
+    })
+    .then(results => {
+      res.json(results)
+    })
+    .catch(err => {
+      throw new Error(err)
+    })
+  }
 })
 
 // not used; but can be used in the search issue later
@@ -30,19 +36,21 @@ router.get('/words/:id', (req, res) => {
 
 // post route; creates a new word; works fine
 router.post('/words', (req, res) => {
-  Words.create({
-    word: req.body.word,
-    definition: req.body.definition,
-    user_id: req.session.user_id
-  })
-    .then(results => {
-      res.json(results)
+  if(req.session) {
+    Words.create({
+      word: req.body.word,
+      definition: req.body.definition,
+      user_id: req.session.user_id
     })
-    .catch(err => {
-      if (err) {
-        console.log(err)
-      }
-    })
+      .then(results => {
+        res.json(results)
+      })
+      .catch(err => {
+        if (err) {
+          console.log(err)
+        }
+      })
+  }
 })
 
 // update route; not sure what issues encompass this route
