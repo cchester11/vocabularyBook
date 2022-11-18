@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const { Users } = require('../../models')
 
-// take to homepage after successful sign up
+// take to homepage after successful sign up; successfully stores new User data in session storage on the Sessions table
 router.post('/signupform', (req, res) => {
       // send body {username: 'username', password: 'password'} to sequelize to create new user
       Users.create({
@@ -26,7 +26,7 @@ router.post('/signupform', (req, res) => {
             })
 })
 
-// take to homepage after successful login
+// take to homepage after successful login; user session successfully stored in Sessions table
 router.post('/loginform', (req, res) => {
       Users.findOne({
             where: {
