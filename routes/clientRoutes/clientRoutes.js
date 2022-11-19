@@ -19,21 +19,29 @@ router.get('/home', (req, res) => {
 
 // creation pages used for sending data to the database
 router.get('/createWord', (req, res) => {
-  res.render('createWord')
+  res.render('createWord', {
+    loggedIn: req.session.loggedIn
+  })
 })
 
 router.get('/createPrefix', (req, res) => {
-  res.render('createPrefix')
+  res.render('createPrefix', {
+    loggedIn: req.session.loggedIn
+  })
 })
 
 router.get('/createSuffix', (req, res) => {
-  res.render('createSuffix')
+  res.render('createSuffix', {
+    loggedIn: req.session.loggedIn
+  })
 })
 
 
 // a page displaying an index of the letters of the alphabet. choose one to be routed to the route below
 router.get('/dictionary', (req, res) => {
-  res.render('dictionary')
+  res.render('dictionary', {
+    loggedIn: req.session.loggedIn
+  })
 })
 
 // works correctly. takes you to a page that displays all words starting with selected letter
@@ -50,7 +58,8 @@ router.get('/pages/:id', (req, res) => {
       const words = data.map(word => word.get({ plain: true }))
 
       res.render('pages', {
-        words
+        words,
+        loggedIn: req.session.loggedIn
       })
     })
     .catch(err => {
