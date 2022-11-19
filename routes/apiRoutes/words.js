@@ -53,38 +53,46 @@ router.post('/words', (req, res) => {
   }
 })
 
-// update route; not sure what issues encompass this route
+// update route; route is used to successfully update words upon save button submission
 router.put('/update/:id', (req, res) => {
-  Words.update({
-    word: req.body.word,
-    definition: req.body.definition
-  },
-  {
-      where: {
-        id: req.params.id
-      }
-  })
-  .then(results => res.json(results))
-  .catch(err => {
-    throw new Error(err)
-  })
+  if(req.session) {
+    Words.update({
+      word: req.body.word,
+      definition: req.body.definition
+    },
+    {
+        where: {
+          id: req.params.id
+        }
+    })
+    .then(results => res.json(results))
+    .catch(err => {
+      throw new Error(err)
+    })
+  } else {
+    res.status(200).end()
+  }
 })
 
 // delete route; works correctly
 router.delete('/delete/:id', (req, res) => {
   console.log('made it to delete route')
-  Words.destroy({
-    where: {
-      id: req.params.id
-    }
-  })
-  .then((results) => {
-    console.log('word successfully deleted')
-    res.json(results)
-  })
-  .catch(err => {
-    throw new Error(err)
-  })
+  if(req.session) {
+    Words.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    .then((results) => {
+      console.log('word successfully deleted')
+      res.json(results)
+    })
+    .catch(err => {
+      throw new Error(err)
+    })
+  } else {
+    res.status(200).end()
+  }
 })
 
 module.exports = router
