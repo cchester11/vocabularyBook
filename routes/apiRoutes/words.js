@@ -5,11 +5,7 @@ const { Words } = require('../../models')
 router.get('/words', (req, res) => {
   console.log('finding all words')
   if(req.session) {
-    Words.findAll({
-      where: {
-        user_id: req.session.user_id
-      }
-    })
+    Words.findAll({})
     .then(results => {
       res.json(results)
     })
