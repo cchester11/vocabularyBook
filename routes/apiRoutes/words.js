@@ -15,6 +15,26 @@ router.get('/words', (req, res) => {
   }
 })
 
+// route for search bar; finds searched for word
+router.get('/words/:word', (req, res) => {
+  Words.findOne({
+    where: {
+      word: req.params.word
+    }
+  })
+    .then(word => {
+      if(!word) {
+        res.json({
+          message: 'No one in the db under that name'
+        })
+      }
+      res.json(word)
+    })
+    .catch(err => {
+      throw new Error(err)
+    })
+})
+
 // not used; but can be used in the search issue later
 router.get('/words/:id', (req, res) => {
   Words.findAll({

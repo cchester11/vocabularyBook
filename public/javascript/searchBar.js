@@ -4,11 +4,8 @@ const searchBarBtn = document.getElementById('nav-search-bar-btn');
 async function searchBarHandler () {
       const word = searchBar.value.trim()
 
-      const response = await fetch('/api/words/:word', {
-            method: "post",
-            body: JSON.stringify({
-                  word: word
-            }),
+      const response = await fetch('/api/words/'+word, {
+            method: "get",
             headers: {'Content-Type': 'application/json'}
       })
 
