@@ -8,9 +8,13 @@ router.get('/', (req, res) => {
   res.render('login')
 })
 
+// below client routes (rendering UI) will check for loggedIn value of true or false
+
 // home route
 router.get('/home', (req, res) => {
-  res.render('home')
+  res.render('home', {
+    loggedIn: req.session.loggedIn
+  })
 })
 
 // creation pages used for sending data to the database
