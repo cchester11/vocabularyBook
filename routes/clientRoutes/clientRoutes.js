@@ -71,12 +71,19 @@ router.get('/pages/:id', (req, res) => {
 
 // route redirects to page that renders searched for word after successful search request
 router.get('/search/:word', (req, res) => {
+  console.log(req.params.word)
   Words.findOne({
     where: {
       word: req.params.word
-    }
+    },
+    attributes: [
+      'word',
+      'definition'
+    ]
   })
-    .then(word => {
+    .then(result => {
+      const word = result.toJSON()
+      
       res.render('search', {
         word,
         loggedIn: req.session.loggedIn
