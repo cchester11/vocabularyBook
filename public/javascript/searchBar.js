@@ -1,19 +1,24 @@
 const searchBar = document.getElementById('nav-search-bar');
 const searchBarBtn = document.getElementById('nav-search-bar-btn');
 
-async function searchBarHandler () {
-      const word = searchBar.value.trim()
+async function searchBarHandler (event) {
+      event.preventDefault()
 
-      const response = await fetch('/api/words/'+word, {
+      const word = searchBar.value.trim()
+      const url = '/api/words/'+word
+
+      const response = await fetch(url, {
             method: "get",
             headers: {'Content-Type': 'application/json'}
       })
 
       if(response.ok) {
             console.log('successful fetch')
+            searchBar.value = '';
       } else {
-            window.alert('that word does not appear to exist in the database')
+            console.log('bad fetch request')
             alert(response.statusText)
+            searchBar.value = '';
       }
 }
 

@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const { Words } = require('../../models')
 
-// get all words; works fine
+// get all words; works fine; used on homepage
 router.get('/words', (req, res) => {
   console.log('finding all words')
   if(req.session) {
@@ -17,17 +17,18 @@ router.get('/words', (req, res) => {
 
 // route for search bar; finds searched for word
 router.get('/words/:word', (req, res) => {
+  console.log(req.params.word)
   Words.findOne({
     where: {
       word: req.params.word
     }
   })
     .then(word => {
-      if(!word) {
-        res.json({
-          message: 'No one in the db under that name'
-        })
+      if (!word) {
+        res.status(404).json({ message: 'No word found in the db' });
+        return;
       }
+
       res.json(word)
     })
     .catch(err => {
@@ -35,7 +36,7 @@ router.get('/words/:word', (req, res) => {
     })
 })
 
-// not used; but can be used in the search issue later
+// not used; 
 router.get('/words/:id', (req, res) => {
   Words.findAll({
     where: {
