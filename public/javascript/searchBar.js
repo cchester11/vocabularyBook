@@ -15,6 +15,7 @@ async function searchBarHandler (event) {
       if(response.ok) {
             console.log('successful fetch')
             searchBar.value = '';
+            document.location.replace('/search/'+word)
       } else {
             console.log('bad fetch request')
             alert(response.statusText)

@@ -69,4 +69,22 @@ router.get('/pages/:id', (req, res) => {
     })
 })
 
+// route redirects to page that renders searched for word after successful search request
+router.get('/search/:word', (req, res) => {
+  Words.findOne({
+    where: {
+      word: req.params.word
+    }
+  })
+    .then(word => {
+      res.render('search', {
+        word,
+        loggedIn: req.session.loggedIn
+      })
+    })
+    .catch(err => {
+      throw new Error(err)
+    })
+})
+
 module.exports = router;
