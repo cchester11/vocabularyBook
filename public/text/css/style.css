@@ -33,6 +33,12 @@ h1 {
   height: 100%;
 }
 
+#allUserWords {
+  background-color: rgba(46, 5, 90, 0.3);
+  width: 100%;
+  height: 100%;
+}
+
 .figure {
   font-weight: lighter;
   font-size: 5em;
