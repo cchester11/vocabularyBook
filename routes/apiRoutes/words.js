@@ -71,7 +71,7 @@ router.post('/words', (req, res) => {
   }
 })
 
-// update route; route is used to successfully update words upon save button submission
+// update route; route is used to successfully update words upon save button submission of the edit feature
 router.put('/update/:id', (req, res) => {
   if(req.session) {
     Words.update({
