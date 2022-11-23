@@ -24,17 +24,7 @@ router.get('/createWord', (req, res) => {
   })
 })
 
-router.get('/createPrefix', (req, res) => {
-  res.render('createPrefix', {
-    loggedIn: req.session.loggedIn
-  })
-})
 
-router.get('/createSuffix', (req, res) => {
-  res.render('createSuffix', {
-    loggedIn: req.session.loggedIn
-  })
-})
 
 
 // a page displaying an index of the letters of the alphabet. choose one to be routed to the route below
