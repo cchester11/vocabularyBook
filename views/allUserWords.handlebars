@@ -4,12 +4,6 @@
             <div class="card-body col-12 border border-warning rounded bg-success h-25 m-auto">
                   <h5 class="card-title font-weight-light word" id="{{word.id}}">{{word.word}}</h5>
                   <p class="card-text definition" id="{{word.id}}">{{word.definition}}</p>
-                  <button class="button btn-warning btn-sm editBtn" id="{{word.id}}"
-                        data-count="{{word.id}}">Edit</button>
-                  <button class="button btn-primary btn-sm saveBtn" id="{{word.id}}"
-                        data-count="{{word.id}}">Save</button>
-                  <button class="button btn-danger btn-sm deleteBtn" id="{{word.id}}" data-count="{{word.id}}"
-                        onclick="deleteWord(this.id)">Delete</button>
             </div>
             {{/each}}
       </div>
