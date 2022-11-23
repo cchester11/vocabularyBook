@@ -1,4 +1,4 @@
-const wordsListDiv = document.getElementById('wordsListDiv');
+const wordsListDiv = document.getElementById('allWordsListDiv');
 let items = {};
 
 async function getAllUserWords() {

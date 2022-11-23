@@ -39,6 +39,11 @@ h1 {
   height: 100%;
 }
 
+#allWordsListDiv {
+  overflow-y: hidden;
+  overflow-y: scroll;
+}
+
 .figure {
   font-weight: lighter;
   font-size: 5em;
