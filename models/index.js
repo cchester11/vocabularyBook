@@ -2,8 +2,6 @@
 const Users = require('./Users')
 const Words = require('./Words')
 const Likes = require('./Likes')
-const Prefix = require('./Prefix')
-const Suffix = require('./Suffix')
 
 // create associations
 Users.hasMany(Words, {
@@ -23,4 +21,4 @@ Likes.belongsTo(Users, {
 })
 
 // send models to routes, server, etc with their associations
-module.exports = {Users, Words, Likes, Prefix, Suffix};
+module.exports = { Users, Words, Likes };
