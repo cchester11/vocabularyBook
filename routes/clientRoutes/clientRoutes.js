@@ -24,8 +24,17 @@ router.get('/createWord', (req, res) => {
   })
 })
 
+router.get('/allUserWords', (req, res) => {
+    res.render('allUserWords', {
+      loggedIn: req.session.loggedIn
+    })
+})
 
-
+router.get('/likedWords', (req, res) => {
+  res.render('likedWords', {
+    loggedIn: req.session.loggedIn
+  })
+})
 
 // a page displaying an index of the letters of the alphabet. choose one to be routed to the route below
 router.get('/dictionary', (req, res) => {
