@@ -1,9 +1,10 @@
 const add_to_my_words_button = document.getElementById('add-to-my-words-button');
-const word = document.querySelector('.word').value
-const definition = document.querySelector('.definition').value
 
-async function handleAddToMyWordsFeature (event) {
+async function handleAddToMyWordsFeature(event) {
       event.preventDefault()
+      const word = document.querySelector('#word').textContent
+      const definition = document.querySelector('#definition').textContent
+
       console.log(word, definition)
       console.log('clicked')
 
@@ -16,7 +17,7 @@ async function handleAddToMyWordsFeature (event) {
             headers: { 'Content-Type': 'application/json' }
       })
 
-      if(response.ok) {
+      if (response.ok) {
             window.alert("You've added a new word to your database!")
             document.location.replace('/dictionary')
       } else {

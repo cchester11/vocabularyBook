@@ -64,6 +64,7 @@ router.post('/words', (req, res) => {
       })
       .catch(err => {
         if (err) {
+          console.log('bad request')
           console.log(err)
         }
       })
