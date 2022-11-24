@@ -1,11 +1,30 @@
 const router = require('express').Router()
-const { Words } = require('../../models')
+const { Words, Users } = require('../../models')
 
 // get all words; works fine; used on homepage
 router.get('/words', (req, res) => {
   console.log('finding all words')
   if(req.session) {
     Words.findAll({})
+    .then(results => {
+      res.json(results)
+    })
+    .catch(err => {
+      throw new Error(err)
+    })
+  }
+})
+
+// get all words plus username; used for alluserwords page
+router.get('/words/alluserspage', (req, res) => {
+  console.log('finding all words')
+  if(req.session) {
+    Words.findAll({
+      include: {
+        model: Users,
+        attributes: ['username']
+      }
+    })
     .then(results => {
       res.json(results)
     })
