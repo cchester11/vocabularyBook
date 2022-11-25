@@ -44,6 +44,10 @@ h1 {
   overflow-y: scroll;
 }
 
+#usernameEl {
+  float: right;
+}
+
 .figure {
   font-weight: lighter;
   font-size: 5em;
