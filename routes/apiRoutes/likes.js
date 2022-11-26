@@ -1,12 +1,5 @@
 const router = require('express').Router();
-const { Likes, Users } = require('../../models');
-
-// test route; works 
-router.get('/likes/liked', (req, res) => {
-      Likes.findAll({})
-      .then(results => res.json(results))
-      .catch(err => console.log(Error(err)))
-})
+const { Likes, Users, Words } = require('../../models');
 
 router.get('/likes', (req, res) => {
       if (req.session) {
@@ -14,10 +7,16 @@ router.get('/likes', (req, res) => {
                   where: {
                         user_id: req.session.user_id
                   },
-                  include: {
-                        model: Users,
-                        attributes: ['username']
-                  }
+                  include: [
+                        {
+                              model: Users,
+                              attributes: ['username']
+                        },
+                        {
+                              model: Words,
+                              attributes: ['word', 'definition']
+                        }
+                  ]
             })
                   .then(results => {
                         if(!results) { res.json({ message: "No likes in your db"}) }
