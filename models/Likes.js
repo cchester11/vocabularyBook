@@ -21,12 +21,12 @@ Likes.init(
                         key: 'id'
                   }
             },
-            liked_word: {
-                  type: DataTypes.STRING,
+            word_id: {
+                  type: DataTypes.INTEGER,
                   allowNull: false,
                   references: {
                         model: 'Words',
-                        key: 'word'
+                        key: 'id'
                   }
             }
       },

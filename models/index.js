@@ -20,5 +20,13 @@ Likes.belongsTo(Users, {
       foreignKey: 'user_id'
 })
 
+Words.hasMany(Likes, {
+      foreignKey: 'word_id'
+})
+
+Likes.belongsTo(Words, {
+      foreignKey: 'word_id'
+})
+
 // send models to routes, server, etc with their associations
 module.exports = { Users, Words, Likes };

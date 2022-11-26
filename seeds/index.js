@@ -1,7 +1,6 @@
 const seedUsers = require('./users')
 const seedWords = require('./words')
-const seedPrefix = require('./prefix')
-const seedSuffix = require('./suffix')
+const seedLikes = require('./likes')
 
 const sequelize = require('../config/connection')
 
@@ -20,13 +19,8 @@ const seedAll = async () => {
 
   console.log('============')
 
-  await seedPrefix()
-  console.log('Prefix synced successfully')
-
-  console.log('============')
-
-  await seedSuffix()
-  console.log('Suffix synced successfully')
+  await seedLikes()
+  console.log('Likes successfully seeded')
 
   console.log('============')
 
