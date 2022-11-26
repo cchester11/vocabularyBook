@@ -2,12 +2,12 @@ const add_to_my_words_button = document.getElementById('add-to-my-words-button')
 
 async function handleAddToMyWordsFeature(event) {
       event.preventDefault()
-      const liked_word = document.querySelector('#word').textContent
+      const word_id = document.querySelector('h5').id
 
       const response = await fetch('/api/likes', {
             method: 'post',
             body: JSON.stringify({
-                  liked_word: liked_word
+                  word_id: word_id
             }),
             headers: { 'Content-Type': 'application/json' }
       })

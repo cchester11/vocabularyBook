@@ -76,6 +76,7 @@ router.get('/search/:word', (req, res) => {
       word: req.params.word
     },
     attributes: [
+      'id',
       'word',
       'definition'
     ]

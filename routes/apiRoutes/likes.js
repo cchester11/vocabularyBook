@@ -1,6 +1,13 @@
 const router = require('express').Router();
 const { Likes, Users } = require('../../models');
 
+// test route; works 
+router.get('/likes/liked', (req, res) => {
+      Likes.findAll({})
+      .then(results => res.json(results))
+      .catch(err => console.log(Error(err)))
+})
+
 router.get('/likes', (req, res) => {
       if (req.session) {
             Likes.findAll({
@@ -26,7 +33,7 @@ router.post('/likes', (req, res) => {
       console.log(req.body)
       if (req.session) {
             Likes.create({
-                  liked_word: req.body.liked_word,
+                  word_id: req.body.word_id,
                   user_id: req.session.user_id
             })
                   .then(liked_word => {

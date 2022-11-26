@@ -42,7 +42,7 @@ app.use(require('./routes'))
 // if force: true the tables are erased and reset
 // if force: false all data will be preserved at each fire up
 sequelize.sync({ 
-  force: true
+  force: false
 })
 .then(() => {
   app.listen(PORT, () => {
