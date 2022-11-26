@@ -29,6 +29,7 @@ router.get('/likes', (req, res) => {
       }
 })
 
+// post route used in searchPage; creates a new instanceOf a Like
 router.post('/likes', (req, res) => {
       console.log(req.body)
       if (req.session) {
