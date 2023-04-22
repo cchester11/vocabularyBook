@@ -1,4 +1,5 @@
 {
+  "homepage": "vocabularybook-production.up.railway.app",
   "name": "vocabularybook",
   "version": "1.0.0",
   "description": "a dictionary website I will use to develop my vocabulary",
