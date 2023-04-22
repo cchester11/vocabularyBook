@@ -12,9 +12,10 @@ if (process.env.PORT === 8001) {
   });
 } else {
   sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER,  process.env.DB_PW, {
-    host: 'containers-us-west-71.railway.app',
+    host: process.env.MYSQLHOST,
+    port: process.env.MYSQLPORT,
     dialect: 'mysql',
-    port: 5577,
+    logging: false
   })
 }
 
