@@ -11,7 +11,7 @@ if (process.env.host === 'localhost') {
     port: 3306
   });
 } else {
-  sequelize = new Sequelize(process.env.GOOGLE_DB_NAME, {
+  sequelize = new Sequelize(process.env.GOOGLE_DB_NAME, process.env.RAILWAY_USERNAME, process.env.RAILWAY_PASSWORD, {
     host: process.env.GOOGLE_HOST,
     port: 3306
   })
