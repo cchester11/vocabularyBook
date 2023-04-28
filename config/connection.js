@@ -4,7 +4,7 @@ require('dotenv').config();
 
 let sequelize;
 
-if (PORT === 8001) {
+if (process.env.host === 'localhost') {
   sequelize = new Sequelize(process.env.LOCAL_DB_NAME, process.env.LOCAL_DB_USER, process.env.LOCAL_DB_PW, {
     host: 'localhost',
     dialect: 'mysql',
