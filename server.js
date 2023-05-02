@@ -7,6 +7,7 @@ const session = require('express-session')
 //connection declarations
 const app = express()
 const PORT = process.env.PORT || 8001
+const IP = process.env.RAILWAY_IP
 
 // establish connection to the db
 const sequelize = require('./config/connection')
@@ -45,7 +46,7 @@ sequelize.sync({
   force: false
 })
 .then(() => {
-  app.listen(PORT, () => {
+  app.listen(PORT, IP, () => {
     console.log(`Server running on PORT ${PORT}`)
   })
 })
