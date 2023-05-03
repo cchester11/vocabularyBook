@@ -50,3 +50,6 @@ sequelize.sync({
     console.log(`Server running on PORT ${PORT}`)
   })
 })
+.catch(err => {
+  throw new Error(err)
+})
