@@ -1,2 +1,3 @@
 Connection to Google Cloud Instance
-- the 'app.listen' host code is written as a promise after the 'sequelize.sync' code. Therefore, successful connection to the database must be complete before the site is  live. The object sent to the browser with a value of 'unauthorized access' indicates a malconfigured attempt at connecting railway and google cloud instance 
+- I allowed connection to my database from all ports essentially and now when the server begins running, connection to the google database is seemingly successful. SQL queries do begin to run. However, there may be a problem with the importation of the local database to the google instance. 
+- note that I declared in my variables a railway port and ip address | I declared a username and password for railway access as well
