@@ -1,3 +1,2 @@
-use the onclicks in the DOM to render the deleteWord method
-get rid of id's 
-think about incorporating local storage to manage {{word.id}} for the route
+Connection to Google Cloud Instance
+- the 'app.listen' host code is written as a promise after the 'sequelize.sync' code. Therefore, successful connection to the database must be complete before the site is  live. The object sent to the browser with a value of 'unauthorized access' indicates a malconfigured attempt at connecting railway and google cloud instance 
