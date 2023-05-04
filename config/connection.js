@@ -4,7 +4,7 @@ require('dotenv').config();
 
 let sequelize;
 
-if (process.env.PORT = 4001) {
+if (process.env.RAILWAY_USERNAME) {
   sequelize = new Sequelize(process.env.GOOGLE_DB_NAME, process.env.RAILWAY_USERNAME, process.env.RAILWAY_PASSWORD, {
     host: process.env.GOOGLE_HOST,
     dialect: 'mysql',
