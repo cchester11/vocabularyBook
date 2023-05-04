@@ -7,7 +7,7 @@ const session = require('express-session')
 //connection declarations
 const app = express()
 const PORT = process.env.PORT || 8001
-const IP = process.env.IP
+const IP = process.env.IP || 'localhost'
 
 // establish connection to the db
 const sequelize = require('./config/connection')
