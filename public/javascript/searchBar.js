@@ -7,6 +7,11 @@ async function searchBarHandler (event) {
       const word = searchBar.value.trim()
       const url = '/api/words/'+word
 
+      if(word === '') {
+            window.alert('please type a word into the search box before pressing the search button')
+            return
+      }
+
       const response = await fetch(url, {
             method: "get",
             headers: {'Content-Type': 'application/json'}

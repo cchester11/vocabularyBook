@@ -23,7 +23,7 @@ async function getAllUserWords() {
             const definitionEl = document.createElement('p')
             const usernameEl = document.createElement('p')
 
-            betaDiv.setAttribute('class', 'card-body col-12 border border-warning rounded bg-success h-5 m-auto')
+            betaDiv.setAttribute('class', 'card-body col-12 border border-warning rounded p-5 h-5 all-user-words-container')
             wordEl.setAttribute('class', 'card-title font-weight-light word')
             definitionEl.setAttribute('class', 'card-text definition')
             usernameEl.setAttribute('class', 'card-text usernameEl')

@@ -1,12 +1,12 @@
 <div class="container-fluid d-flex justify-content-center align-items-stretch" id="pages">
   <div class="row w-75" id="wordsListDiv">
     {{#each words as |word|}}
-    <div class="card-body col-12 border border-warning rounded bg-success h-25 m-auto">
+    <div class="card-body col-12 border border-warning rounded h-25 m-auto p-5">
         <h5 class="card-title font-weight-light word" id="{{word.id}}">{{word.word}}</h5>
         <p class="card-text definition" id="{{word.id}}">{{word.definition}}</p>
-        <button class="button btn-warning btn-sm editBtn" id="{{word.id}}" data-count="{{word.id}}">Edit</button>
-        <button class="button btn-primary btn-sm saveBtn" id="{{word.id}}" data-count="{{word.id}}">Save</button>
-        <button class="button btn-danger btn-sm deleteBtn" id="{{word.id}}" data-count="{{word.id}}" onclick="deleteWord(this.id)">Delete</button>
+        <button class="btn btn-sm editBtn pages-button" id="{{word.id}}" data-count="{{word.id}}">Edit</button>
+        <button class="btn btn-sm saveBtn pages-button" id="{{word.id}}" data-count="{{word.id}}">Save</button>
+        <button class="btn btn-sm deleteBtn pages-button" id="{{word.id}}" data-count="{{word.id}}" onclick="deleteWord(this.id)">Delete</button>
     </div>
     {{/each}}
   </div>
