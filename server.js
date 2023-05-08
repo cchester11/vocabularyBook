@@ -8,6 +8,7 @@ const session = require('express-session')
 const app = express()
 const PORT = process.env.PORT || 8001
 const IP = process.env.IP
+const NODE_ENV = process.env.NODE_ENV
 
 // establish connection to the db
 const sequelize = require('./config/connection')
@@ -46,9 +47,15 @@ sequelize.sync({
   force: false
 })
 .then(() => {
-  app.listen(PORT, IP, () => {
-    console.log(`Server running on PORT ${PORT}`)
-  })
+  if(process.env.NODE_ENV === 'local') {
+    app.listen(3001, () => {
+      console.log('Server running locally on ' + PORT)
+    })
+  } else {
+    app.listen(PORT, IP, () => {
+      console.log(`Server running on railway web service @ ${PORT}`)
+    })
+  }
 })
 .catch(err => {
   throw new Error(err)
