@@ -6,7 +6,7 @@ const session = require('express-session')
 
 //connection declarations
 const app = express()
-const PORT = process.env.PORT || 8001
+const PORT = process.env.PORT
 const IP = process.env.IP
 const NODE_ENV = process.env.NODE_ENV
 
@@ -49,7 +49,7 @@ sequelize.sync({
 .then(() => {
   if(process.env.NODE_ENV === 'local') {
     app.listen(3001, () => {
-      console.log('Server running locally on ' + PORT)
+      console.log('Server running locally on PORT 3001')
     })
   } else {
     app.listen(PORT, IP, () => {
