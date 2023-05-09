@@ -16,8 +16,30 @@ nav {
   background-color: var(--primary-color);
   border-bottom: 1px solid var(--secondary-color);
 }
+
+.dropdown-div {
+  background-color: var(--primary-color);
+  opacity: 0.9;
+}
+
+.dropdown-button {
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+}
+
+.dropdown-item {
+  background-color: var(--primary-color)
+}
+.dropdown-item:hover {
+  background-color: var(--primary-color)
+}
+
 .nav-pill {
   background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+}
+.nav-pill:hover {
+  color: var(--primary-color);
 }
 
 .search-bar-class {
@@ -141,13 +163,17 @@ h1 {
   font-size: 3.5em;
 }
 
-#alphabetBtn {
+.alphabet-button {
   margin-left: 8px;
   font-weight: lighter;
   font-size: 2.5em;
   background-color: var(--secondary-color);
   color: var(--tertiary-color);
   border-radius: 10px;
+}
+
+.alphabet-button:hover {
+  color: var(--primary-color);
 }
 
 #footer {

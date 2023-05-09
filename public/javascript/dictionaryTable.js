@@ -17,6 +17,8 @@ function createDictionaryTable() {
     }
 
     const button = document.createElement('button')
+    button.setAttribute('class', 'btn btn-sm alphabet-button')
+    button.setAttribute('style', 'border-bottom: 1.5px solid gold')
 
     button.id = 'alphabetBtn'
 
