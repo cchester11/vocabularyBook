@@ -47,7 +47,7 @@ sequelize.sync({
   force: false
 })
 .then(() => {
-  if(process.env.NODE_ENV === 'local') {
+  if(NODE_ENV === 'local') {
     app.listen(3001, () => {
       console.log('Server running locally on PORT 3001')
     })

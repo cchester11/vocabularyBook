@@ -9,7 +9,7 @@ html {
 }
 
 html, body {
-  height: 100%; 
+  height: 100%;
 }
 
 nav {
@@ -17,7 +17,7 @@ nav {
   border-bottom: 1px solid var(--secondary-color);
 }
 .nav-pill {
-  background-color: var(--secondary-color)
+  background-color: var(--secondary-color);
 }
 
 .search-bar-class {
@@ -124,7 +124,7 @@ h1 {
 
 .search-page-like-word-button {
   background: var(--secondary-color);
-  color: var(--tertiary-color)
+  color: var(--tertiary-color);
 }
 
 .all-user-words-container {

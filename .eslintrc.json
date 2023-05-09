@@ -1,0 +1,28 @@
+{
+    "plugins": ["css", "jquery"],
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "globals": {
+        "$": "true"
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:css/all"
+    ],
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "eqeqeq": "error",
+        "no-duplicate-imports": ["warn", { "includeExports": true }],
+        "jquery/no-ajax": "off",
+        "jquery/no-animate": "off",
+        "no-unused-vars": "warn",
+        "no-undef": "warn"
+    }
+}

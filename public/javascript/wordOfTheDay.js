@@ -39,7 +39,7 @@ function rotateWords () {
   if(a > items.length - 1) {
     a = 0
   }
-};
+}
 
 function changeWordOfTheDayColor () {
   const wordOfTheDay = document.querySelector('#figure1')

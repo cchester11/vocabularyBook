@@ -1,12 +1,12 @@
 function saveId (data) {
   localStorage.setItem('itemId', JSON.stringify(data))
-};
+}
 function saveNewWord (newWord) {
   localStorage.setItem('newWord', JSON.stringify(newWord))
-};
+}
 function saveNewDef (newDef) {
   localStorage.setItem('newDef', JSON.stringify(newDef))
-}; 
+}
 
 async function editWord(clickedId, word, definition) {
   const response = await fetch(`/api/update/${clickedId}`, {
@@ -24,7 +24,7 @@ async function editWord(clickedId, word, definition) {
   } else {
     alert(response.statusText)
   }
-};
+}
 
 //begin edits of item values on click of edit button
 $(".card-body").on('click', '.editBtn', (event) => {
@@ -91,6 +91,6 @@ async function deleteWord(clickedId) {
   } else {
     alert(response.statusText)
   }
-};
+}
 
 
