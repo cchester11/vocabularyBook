@@ -48,6 +48,11 @@ h1 {
   height: 100%;
 }
 
+.login-page-btn {
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+}
+
 #home {
   background-color: var(--primary-color);
   width: 100%;
@@ -97,7 +102,7 @@ h1 {
 }
 
 .pagesDiv {
-  width: 100%
+  width: 100%;
 }
 
 /* .prefix-container {
