@@ -13,7 +13,8 @@ router.get('/', (req, res) => {
 // home route
 router.get('/home', (req, res) => {
   res.render('home', {
-    loggedIn: req.session.loggedIn
+    loggedIn: req.session.loggedIn,
+    username: req.session.username
   })
 })
 

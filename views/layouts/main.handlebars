@@ -19,7 +19,7 @@
   <nav class="navbar navbar-expand-lg navbar-light p-2 d-flex justify-content-around">
     {{#if loggedIn}}
 
-    <div id="navbar-content">
+    <div id="desktop-navbar-content">
       <ul class="navbar-nav m-1 d-flex align-items-center">
         {{!-- home button --}}
         <a class="navbar-brand font-weight-light" href="/home"><span
@@ -28,9 +28,39 @@
         <div class="dropdown">
           <button class="btn dropdown-toggle navbar-brand font-weight-light dropdown-button text-light badge-pill"
             type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Applications
+            {{ username }}
           </button>
           <div class="dropdown-menu dropdown-div" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item navbar-brand font-weight-light" href="/dictionary"><span
+                class="nav-pill badge badge-pill p-3">My
+                Dictionary</span></a>
+            <a class="dropdown-item navbar-brand font-weight-light" href="/createWord"><span
+                class="nav-pill badge badge-pill p-3">Add a
+                Word</span></a>
+            <a class="dropdown-item navbar-brand font-weight-light" href="/likedWords"><span
+                class="nav-pill badge badge-pill p-3">Liked
+                Words</span></a>
+            <a class="dropdown-item navbar-brand font-weight-light" href="/allUserWords"><span
+                class="nav-pill badge badge-pill p-3">All
+                Users Words</span></a>
+            <button type="button" id="logout-btn"
+              class="dropdown-item navbar-brand font-weight-light text-light logout-btn btn m-3">Logout</button>
+          </div>
+        </div>
+      </ul>
+    </div>
+
+    <div id="mobile-navbar-content">
+      <ul class="navbar-nav m-1 d-flex align-items-center">
+        {{!-- dropdown menu --}}
+        <div class="dropdown">
+          <button class="btn dropdown-toggle navbar-brand font-weight-light dropdown-button text-light badge-pill"
+            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ username }}
+          </button>
+          <div class="dropdown-menu dropdown-div" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item navbar-brand font-weight-light" href="/home"><span
+            class="nav-pill badge badge-pill p-3">Home</span></a>
             <a class="dropdown-item navbar-brand font-weight-light" href="/dictionary"><span
                 class="nav-pill badge badge-pill p-3">My
                 Dictionary</span></a>
