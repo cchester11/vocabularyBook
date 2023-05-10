@@ -26,8 +26,8 @@
             class="nav-pill badge badge-pill p-3">Home</span></a>
         {{!-- dropdown menu --}}
         <div class="dropdown">
-          <button class="btn dropdown-toggle navbar-brand font-weight-light dropdown-button text-light badge-pill" type="button"
-            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn dropdown-toggle navbar-brand font-weight-light dropdown-button text-light badge-pill"
+            type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Applications
           </button>
           <div class="dropdown-menu dropdown-div" aria-labelledby="dropdownMenuButton">
@@ -43,6 +43,8 @@
             <a class="dropdown-item navbar-brand font-weight-light" href="/allUserWords"><span
                 class="nav-pill badge badge-pill p-3">All
                 Users Words</span></a>
+            <button type="button" id="logout-btn"
+              class="dropdown-item navbar-brand font-weight-light text-light logout-btn btn m-3">Logout</button>
           </div>
         </div>
       </ul>
@@ -53,9 +55,7 @@
       <input class="search-bar-class navbar-brand font-weight-light" type="search" id="nav-search-bar"
         name="nav-search-bar" placeholder="search for a word">
       <button type="submit" id="nav-search-bar-btn"
-        class="nav-pill navbar-brand font-weight-light btn text-light badge-pill p-3">Search</button>
-      <button type="button" id="logout-btn"
-        class="nav-pill navbar-brand font-weight-light btn text-light badge-pill p-3">Logout</button>
+        class="nav-pill navbar-brand font-weight-light btn text-light badge-pill">Search</button>
     </div>
 
     {{/if}}
