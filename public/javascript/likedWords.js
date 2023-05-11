@@ -23,7 +23,7 @@ async function getAllLikedWords() {
             const wordEl = document.createElement('h5')
             const definitionEl = document.createElement('p')
 
-            betaDiv.setAttribute('class', 'card-body col-12 border border-warning rounded h-25 m-auto p-5 liked-word-container')
+            betaDiv.setAttribute('class', 'card-body col-12 border border-warning rounded h-25 m-2 p-3 liked-word-container')
             usernameEl.setAttribute('class', 'card-text usernameEl')
             wordEl.setAttribute('class', 'card-title font-weight-light word')
             definitionEl.setAttribute('class', 'card-text definition')
