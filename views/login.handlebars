@@ -1,10 +1,13 @@
 {{!-- credentials grabbed here and sent to api route --}}
-<div class="container-fluid d-flex flex-column justify-content-center justify-content-around align-items-center" id="login-page">
-      
+<div class="container-fluid d-flex flex-column justify-content-center justify-content-around align-items-center"
+      id="login-page">
+
       {{!-- error container on sign up or login --}}
       <div id="error-container" class="error-container">
-            <div class="card-text">Invalid username or password</div>
-            <button class="btn badge badge-pill login-page-error-button">Okay</button>
+            <div class="error-sub-container">
+                  <div class="card-text">Invalid username or password</div>
+                  <button class="btn badge badge-pill login-page-error-button">Okay</button>
+            </div>
       </div>
 
       {{!-- login form --}}

@@ -36,7 +36,8 @@ router.post('/loginform', (req, res) => {
       })
             .then(user => {
                   if (!user) {
-                        res.status(400).json({ message: 'Wrong username or password.' })
+                        res.status(401).json({ message: 'Wrong username or password.' })
+                        return
                   }
 
                   req.session.save(() => {
@@ -51,7 +52,8 @@ router.post('/loginform', (req, res) => {
                   })
             })
             .catch(err => {
-                  throw new Error(err)
+                  console.error(err)
+                  res.status(500).json({ message: 'Internal server error' })
             })
 })
 

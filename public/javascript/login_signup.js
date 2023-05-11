@@ -58,4 +58,5 @@ document.querySelector('.signup-form').addEventListener('submit', signup)
 document.querySelector('.login-form').addEventListener('submit', login)
 error_button.addEventListener('click', () => {
       error_container.setAttribute('style', 'display: none')
+      document.location.reload()
 })
