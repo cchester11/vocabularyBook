@@ -17,6 +17,10 @@ nav {
   border-bottom: 1px solid var(--secondary-color);
 }
 
+#mobile-navbar-content {
+  display: none;
+}
+
 .dropdown-div {
   background-color: var(--primary-color);
   opacity: 0.9;
@@ -200,4 +204,14 @@ a {
   font-size: 1.2em;
   font-weight: bolder;
   color: var(--secondary-color);
+}
+
+@media screen and (max-width: 1000px) {
+  #mobile-navbar-content {
+    display: block;
+  }
+
+  #desktop-navbar-content {
+    display: none;
+  }
 }

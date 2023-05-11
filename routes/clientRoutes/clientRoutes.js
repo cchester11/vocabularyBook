@@ -21,26 +21,30 @@ router.get('/home', (req, res) => {
 // creation pages used for sending data to the database
 router.get('/createWord', (req, res) => {
   res.render('createWord', {
-    loggedIn: req.session.loggedIn
+    loggedIn: req.session.loggedIn,
+    username: req.session.username
   })
 })
 
 router.get('/allUserWords', (req, res) => {
     res.render('allUserWords', {
-      loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn,
+      username: req.session.username
     })
 })
 
 router.get('/likedWords', (req, res) => {
   res.render('likedWords', {
-    loggedIn: req.session.loggedIn
+    loggedIn: req.session.loggedIn,
+    username: req.session.username
   })
 })
 
 // a page displaying an index of the letters of the alphabet. choose one to be routed to the route below
 router.get('/dictionary', (req, res) => {
   res.render('dictionary', {
-    loggedIn: req.session.loggedIn
+    loggedIn: req.session.loggedIn,
+    username: req.session.username
   })
 })
 
@@ -59,7 +63,8 @@ router.get('/pages/:id', (req, res) => {
 
       res.render('pages', {
         words,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        username: req.session.username
       })
     })
     .catch(err => {
@@ -87,7 +92,8 @@ router.get('/search/:word', (req, res) => {
       
       res.render('search', {
         word,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        username: req.session.username
       })
     })
     .catch(err => {
