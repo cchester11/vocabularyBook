@@ -79,6 +79,31 @@ h1 {
   color: var(--tertiary-color);
 }
 
+.error-container {
+  z-index: 9000;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  padding: 10px;
+  top: 30;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: lighter;
+  background-color: var(--primary-color);
+  border: 1px solid gold;
+  border-radius: 5px;
+  margin: 10px;
+  display: none;
+}
+
+.login-page-error-button {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
 #home {
   background-color: var(--primary-color);
   width: 100%;

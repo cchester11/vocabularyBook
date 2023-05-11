@@ -92,5 +92,3 @@ async function deleteWord(clickedId) {
     alert(response.statusText)
   }
 }
-
-
