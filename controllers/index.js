@@ -14,11 +14,6 @@ const {
       deleteWord 
 } = require('./words_controllers')
 
-const {
-      getUserLikes,
-      addLikeWordToUser
-} = require('./likes_controllers')
-
 module.exports = { 
       sign_in, 
       login, 
