@@ -2,7 +2,7 @@ const {
       sign_in, 
       login, 
       logout 
-} = require('./user_controllers')
+} = require('./api/user_controllers.js')
 
 const { 
       findAllWords, 
@@ -12,7 +12,18 @@ const {
       createNewWord, 
       updateWord, 
       deleteWord 
-} = require('./words_controllers')
+} = require('./api/words_controllers.js')
+
+const {
+      renderLoginPage,
+      renderHomePage,
+      renderCreateWordPage,
+      renderAllUserWordsPage,
+      renderLikeWordsPage,
+      renderDictionary,
+      renderPages,
+      searchPage
+} = require('./client/client_controllers.js')
 
 module.exports = { 
       sign_in, 
@@ -24,5 +35,13 @@ module.exports = {
       findById,
       createNewWord,
       updateWord,
-      deleteWord 
+      deleteWord,
+      renderLoginPage,
+      renderHomePage,
+      renderCreateWordPage,
+      renderAllUserWordsPage,
+      renderLikeWordsPage,
+      renderDictionary,
+      renderPages,
+      searchPage
 }

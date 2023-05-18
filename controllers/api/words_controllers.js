@@ -1,4 +1,4 @@
-const { Words, Users } = require('../models')
+const { Words, Users } = require('../../models')
 
 exports.findAllWords = (req, res) => {
       console.log('finding all words')

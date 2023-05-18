@@ -1,4 +1,4 @@
-const { Likes, Users, Words} = require('../models')
+const { Likes, Users, Words} = require('../../models')
 
 exports.getUserLikes = (req, res) => {
       if (req.session) {

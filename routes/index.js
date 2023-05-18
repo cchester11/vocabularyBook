@@ -1,9 +1,9 @@
 const router = require('express').Router()
 
-const clientRoutes = require('./clientRoutes/clientRoutes')
-const apiRoutesUsers = require('./apiRoutes/users')
-const apiRoutesWords = require('./apiRoutes/words')
-const apiRoutesLikes = require('./apiRoutes/likes_routes')
+const clientRoutes = require('./client/clientRoutes')
+const apiRoutesUsers = require('./api/users')
+const apiRoutesWords = require('./api/words')
+const apiRoutesLikes = require('./api/likes_routes')
 
 router.use('/', clientRoutes)
 router.use('/api', apiRoutesUsers)

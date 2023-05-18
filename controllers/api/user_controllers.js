@@ -1,4 +1,4 @@
-const { Users } = require('../models')
+const { Users } = require('../../models')
 
 exports.sign_in = (req, res) => {
       // send body {username: 'username', password: 'password'} to sequelize to create new user
