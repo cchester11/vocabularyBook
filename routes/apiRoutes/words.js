@@ -1,5 +1,14 @@
 const router = require('express').Router()
-const { findAllWords, allUserWords } = require('../../controllers')
+const { 
+  findAllWords, 
+  allUserWords, 
+  findOneWord, 
+  findById, 
+  createNewWord,
+  updateWord,
+  deleteWord 
+} = require('../../controllers')
+
 // get all words; works fine; used on homepage
 router.get('/words', findAllWords)
 
@@ -7,101 +16,18 @@ router.get('/words', findAllWords)
 router.get('/words/alluserspage', allUserWords)
 
 // route for search bar; finds searched for word
-router.get('/words/:word', (req, res) => {
-  console.log(req.params.word)
-  Words.findOne({
-    where: {
-      word: req.params.word
-    }
-  })
-    .then(word => {
-      if (!word) {
-        res.status(404).json({ message: 'No word found in the db' });
-        return;
-      }
-
-      res.json(word)
-    })
-    .catch(err => {
-      throw new Error(err)
-    })
-})
+router.get('/words/:word', findOneWord)
 
 // not used; 
-router.get('/words/:id', (req, res) => {
-  Words.findAll({
-    where: {
-      id: req.params.id
-    }
-  })
-  .then(results => {
-    res.json(results)
-  })
-  .catch(err => {
-    throw new Error(err)
-  })
-})
+router.get('/words/:id', findById)
 
 // post route; creates a new word; works fine
-router.post('/words', (req, res) => {
-  if(req.session) {
-    Words.create({
-      word: req.body.word,
-      definition: req.body.definition,
-      user_id: req.session.user_id
-    })
-      .then(results => {
-        res.json(results)
-      })
-      .catch(err => {
-        if (err) {
-          console.log('bad request')
-          console.log(err)
-        }
-      })
-  }
-})
+router.post('/words', createNewWord)
 
 // update route; route is used to successfully update words upon save button submission of the edit feature
-router.put('/update/:id', (req, res) => {
-  if(req.session) {
-    Words.update({
-      word: req.body.word,
-      definition: req.body.definition
-    },
-    {
-        where: {
-          id: req.params.id
-        }
-    })
-    .then(results => res.json(results))
-    .catch(err => {
-      throw new Error(err)
-    })
-  } else {
-    res.status(200).end()
-  }
-})
+router.put('/update/:id', updateWord)
 
 // delete route; works correctly
-router.delete('/delete/:id', (req, res) => {
-  console.log('made it to delete route')
-  if(req.session) {
-    Words.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
-    .then((results) => {
-      console.log('word successfully deleted')
-      res.json(results)
-    })
-    .catch(err => {
-      throw new Error(err)
-    })
-  } else {
-    res.status(200).end()
-  }
-})
+router.delete('/delete/:id', deleteWord)
 
 module.exports = router

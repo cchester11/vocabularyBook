@@ -1,7 +1,6 @@
-const router = require('express').Router();
-const { Likes, Users, Words } = require('../../models');
+const { Likes, Users, Words} = require('../models')
 
-router.get('/likes', (req, res) => {
+exports.getUserLikes = (req, res) => {
       if (req.session) {
             Likes.findAll({
                   where: {
@@ -26,10 +25,9 @@ router.get('/likes', (req, res) => {
                         throw new Error(err)
                   })
       }
-})
+}
 
-// post route used in searchPage; creates a new instanceOf a Like
-router.post('/likes', (req, res) => {
+exports.addLikeWordToUser = (req, res) => {
       console.log(req.body)
       if (req.session) {
             Likes.create({
@@ -43,6 +41,4 @@ router.post('/likes', (req, res) => {
                         throw new Error(err)
                   })
       }
-})
-
-module.exports = router;
+}

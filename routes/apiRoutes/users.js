@@ -7,6 +7,7 @@ router.post('/signupform', sign_in)
 // take to homepage after successful login; user session successfully stored in Sessions table
 router.post('/loginform', login)
 
+// redirect to homepage and destroy user session
 router.post('/logout', logout)
 
 module.exports = router
